@@ -1,0 +1,22 @@
+#social-media {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+#social-media a {
+  width: 2.6em;
+  height: 2.6em;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  border: 1px solid var(--text-primary);
+  border-radius: 100%;
+
+  color: var(--text-primary);
+}

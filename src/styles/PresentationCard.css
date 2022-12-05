@@ -1,0 +1,38 @@
+#presentationCard {
+  width: 45vw;
+  border-radius: 10px;
+  padding: 40px;
+
+  color: var(--text-primary);
+  background-color: var(--background);
+
+  transition: all 0.5s;
+}
+
+#presentationCard h1 {
+  margin: 20px auto;
+}
+
+#presentationCard hr {
+  width: 50px;
+  margin: 20px auto;
+}
+
+#presentationCard #myPhoto {
+  border-radius: 100%;
+}
+
+#presentationCard button a {
+  display: flex;
+  color: var(--text-primary);
+}
+
+@media screen and (max-width: 892px) {
+  #presentationCard {
+    width: 100%;
+  }
+
+  #bout-me {
+    width: 100% !important;
+  }
+}
