@@ -27,6 +27,12 @@
 
 #header-buttons .hamburger {
   display: none;
+
+  border: 0;
+  height: 40px;
+  width: 40px;
+  padding: 0.5rem;
+  cursor: pointer;
 }
 
 @media screen and (max-width: 1338px) {

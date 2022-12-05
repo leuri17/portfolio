@@ -11,7 +11,7 @@
   --link-color-hover: #136499;
 }
 
-[data-theme="dark"] {
+[data-theme='dark'] {
   --background: #202020;
   --nav-background: #20202060;
 
@@ -22,7 +22,7 @@
   --button-bg: var(--text-secondary);
 }
 
-[data-theme="light"] {
+[data-theme='light'] {
   --background: #fafafa;
   --nav-background: #fafafa60;
 
@@ -38,6 +38,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  transition: all 0.35s;
 }
 
 :root {
@@ -83,8 +84,6 @@ a {
   color: var(--link-color);
 
   text-decoration: inherit;
-
-  transition: all 0.35s;
 }
 
 a:hover {
@@ -103,8 +102,6 @@ button {
   font-size: 1em;
   line-height: 1em;
   cursor: pointer;
-
-  transition: all 0.35s;
 }
 
 button:hover {
