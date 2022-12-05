@@ -1,4 +1,5 @@
 import Navbar from './Navbar'
+import { Outlet } from 'react-router-dom'
 
 /** Future Layout component for react-router.
  * Now is for testing the theme and create the firsts
@@ -10,6 +11,7 @@ const Layout = () => {
       <Navbar />
 
       <section id="main">
+        <Outlet />
       </section>
 
       <footer></footer>

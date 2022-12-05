@@ -1,3 +1,4 @@
+import { NavLink } from 'react-router-dom'
 import { FaGithub } from 'react-icons/fa'
 import '../styles/NavMenu.css'
 
@@ -5,17 +6,23 @@ const NavMenu = ({ ...props }) => {
   return (
     <ul id="menu" {...props}>
       <li>
-        <a href="/projects">Projects</a>
+        <NavLink to="projects" className={({ isActive }) => (isActive ? 'active' : '')}>
+          Projects
+        </NavLink>
       </li>
       <li>
-        <a href="/skills">Skills</a>
+        <NavLink to="skills" className={({ isActive }) => (isActive ? 'active' : '')}>
+          Skills
+        </NavLink>
       </li>
       <li>
-        <a href="/contact">Contact</a>
+        <NavLink to="contact" className={({ isActive }) => (isActive ? 'active' : '')}>
+          Contact
+        </NavLink>
       </li>
       <li>
-        <a href="https://github.com/leuri17/portfolio" target='_blank' rel='noreferrer'>
-          <FaGithub title='Github logo'/> Source
+        <a href="https://github.com/leuri17/portfolio" target="_blank" rel="noreferrer">
+          <FaGithub title="GitHub logo" /> Source
         </a>
       </li>
     </ul>
