@@ -1,3 +1,9 @@
+/* || Fonts */
+@font-face {
+  font-family: 'VT323';
+  src: local('VT323'), url(../assets/fonts/VT323/VT323-Regular.ttf) format('truetype');
+}
+
 /* || Color Vars */
 
 :root {
@@ -5,7 +11,6 @@
   --link-color-hover: #136499;
 }
 
-/* Dark Theme */
 [data-theme="dark"] {
   --background: #202020;
   --nav-background: #20202060;
@@ -17,7 +22,6 @@
   --button-bg: var(--text-secondary);
 }
 
-/* Light Theme */
 [data-theme="light"] {
   --background: #fafafa;
   --nav-background: #fafafa60;
@@ -50,9 +54,15 @@
 }
 
 #root {
-  max-width: 100vw;
+  display: grid;
+  grid-template-rows: 50px 1fr 50px;
+  gap: 10px;
+
   width: 100vw;
+  max-width: 100vw;
+
   min-height: 100vh;
+  max-height: fit-content;
 
   color: var(--text-primary);
   background-color: var(--background);
@@ -83,7 +93,6 @@ a:hover {
 
 button {
   display: flex;
-  margin: 0 auto;
 
   color: var(--button-color);
   background-color: var(--button-bg);

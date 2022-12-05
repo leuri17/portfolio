@@ -1,17 +1,17 @@
-import React, { useContext } from 'react'
-import { ThemeContext } from '../context/ThemeContext'
+import Navbar from './Navbar'
 
 /** Future Layout component for react-router.
  * Now is for testing the theme and create the firsts
  * components
  */
 const Layout = () => {
-  const { theme, dispatch } = useContext(ThemeContext)
-
   return (
-    <div>
-      <button onClick={() => { dispatch({ type: 'THEME/switchTheme' }) }}>Switch to {theme === 'dark' ? 'light' : 'dark'}</button>
-    </div>
+    <>
+      <Navbar />
+      <section id="main"></section>
+
+      <footer></footer>
+    </>
   )
 }
 

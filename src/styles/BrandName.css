@@ -1,0 +1,12 @@
+#brand-name {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+#brand-name h1 {
+  margin-bottom: 0;
+  font-size: 36px;
+  color: var(--text-primary);
+  font-family: VT323;
+}
