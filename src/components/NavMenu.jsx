@@ -1,9 +1,9 @@
 import { FaGithub } from 'react-icons/fa'
 import '../styles/NavMenu.css'
 
-const NavMenu = () => {
+const NavMenu = ({ ...props }) => {
   return (
-    <ul id="menu">
+    <ul id="menu" {...props}>
       <li>
         <a href="/projects">Projects</a>
       </li>

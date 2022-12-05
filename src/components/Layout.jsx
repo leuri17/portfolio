@@ -8,7 +8,9 @@ const Layout = () => {
   return (
     <>
       <Navbar />
-      <section id="main"></section>
+
+      <section id="main">
+      </section>
 
       <footer></footer>
     </>

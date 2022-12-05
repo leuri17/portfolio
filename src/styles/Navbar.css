@@ -1,6 +1,6 @@
 #header {
-  width: 900px;
-  height: 100%;
+  width: 100vw;
+  height: fit-content;
   background-color: var(--nav-background);
 
   position: sticky;
@@ -12,14 +12,55 @@
 }
 
 #header nav {
-  width: 900px;
+  width: 60vw;
   margin: 0 auto;
   display: grid;
-  grid-template-columns: 1fr 2fr 1fr;
+  grid-template-columns: 1.5fr 3fr 1fr;
 }
 
 #header-buttons {
   display: flex;
   align-items: center;
   justify-content: right;
+  gap: 20px;
+}
+
+#header-buttons .hamburger {
+  display: none;
+}
+
+@media screen and (max-width: 1338px) {
+  #header nav {
+    grid-template-columns: 2fr 3fr 1fr;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  #header nav {
+    width: 100vw;
+    padding: 0 10vw;
+    grid-template-columns: 1.5fr 3fr 1fr;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  #header nav {
+    padding: 0 5vw;
+  }
+}
+
+@media screen and (max-width: 712px) {
+  #header {
+    height: fit-content;
+  }
+
+  #header nav {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 50px 2fr;
+  }
+
+  #header-buttons .hamburger {
+    display: block;
+    cursor: pointer;
+  }
 }

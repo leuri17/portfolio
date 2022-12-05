@@ -10,3 +10,31 @@
   color: var(--text-primary);
   font-family: VT323;
 }
+
+@media screen and (max-width: 892px) {
+  #brand-name svg {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 712px) {
+  #brand-name svg {
+    display: block;
+  }
+}
+
+@media screen and (max-width: 486px) {
+  #brand-name svg {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 384px) {
+  #brand-name svg {
+    display: block;
+  }
+  
+  #brand-name h1 {
+    display: none;
+  }
+}

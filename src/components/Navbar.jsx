@@ -1,16 +1,33 @@
+import { useState } from 'react'
+import { FaBars, FaTimes } from 'react-icons/fa'
 import '../styles/Navbar.css'
 import BrandName from './BrandName'
 import NavMenu from './NavMenu'
 import SwitchThemeButton from './SwitchThemeButton'
 
 const Navbar = () => {
+  const [isMenuExpanded, setIsMenuExpanded] = useState(true)
+
+  const toggleMenu = () => {
+    setIsMenuExpanded(!isMenuExpanded)
+
+    document.getElementById('menu').classList.toggle('show')
+  }
+
   return (
-    <header id="header" style={{ width: '100vw', height: '100%', display: 'grid' }}>
+    <header id="header">
       <nav>
         <BrandName />
         <NavMenu />
-        <div id='header-buttons'>
+        <div id="header-buttons">
           <SwitchThemeButton />
+          {isMenuExpanded
+            ? (
+            <FaBars className="hamburger" onClick={toggleMenu} />
+              )
+            : (
+            <FaTimes className="hamburger" onClick={toggleMenu} />
+              )}
         </div>
       </nav>
     </header>
