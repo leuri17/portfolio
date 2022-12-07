@@ -14,10 +14,10 @@ const themeReducer = (state, action) => {
   }
 }
 
-const ThemeProvider = (props) => {
+const ThemeProvider = ({ children, ...props }) => {
   const [theme, dispatch] = useReducer(themeReducer, initialState)
 
-  return <ThemeContext.Provider value={{ theme, dispatch }}>{props.children}</ThemeContext.Provider>
+  return <ThemeContext.Provider value={{ theme, dispatch }}>{children}</ThemeContext.Provider>
 }
 
 ThemeProvider.propTypes = {

@@ -1,7 +1,7 @@
+import Carousel from '../components/Carousel'
+
 const Skills = () => {
-  return (
-    <div>Skills</div>
-  )
+  return <Carousel />
 }
 
 export default Skills
