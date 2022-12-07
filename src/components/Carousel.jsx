@@ -46,7 +46,7 @@ const CAROUSEL_ITEMS = [
   }
 ]
 
-const Carousel2 = () => {
+const Carousel = () => {
   const [slider, setSlider] = useState()
   const [direction, setDirection] = useState()
 
@@ -117,4 +117,4 @@ const Carousel2 = () => {
   )
 }
 
-export default Carousel2
+export default Carousel

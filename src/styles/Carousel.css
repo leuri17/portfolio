@@ -24,7 +24,6 @@
   flex-shrink: 0;
   transform: translate(-20%);
   overflow: hidden;
-  transition: none;
 }
 
 .carousel-item {
@@ -37,3 +36,6 @@
   flex-shrink: 0;
 }
 
+.carousel-item.svg {
+  transition: none !important;
+}
