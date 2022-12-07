@@ -76,7 +76,7 @@ const Carousel = () => {
     slider.style.transition = 'none'
     slider.style.transform = 'translate(-20%)'
     setTimeout(() => {
-      slider.style.transition = 'all 0.5s'
+      slider.style.transition = 'all 0.35s'
     })
   }
 

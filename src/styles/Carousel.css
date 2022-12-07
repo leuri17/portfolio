@@ -35,7 +35,3 @@
   width: 20%;
   flex-shrink: 0;
 }
-
-.carousel-item.svg {
-  transition: none !important;
-}
