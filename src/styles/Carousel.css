@@ -27,10 +27,6 @@
   transition: none;
 }
 
-#slider::-webkit-scrollbar {
-  display: none;
-}
-
 .carousel-item {
   display: flex;
   align-items: center;
