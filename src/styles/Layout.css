@@ -5,6 +5,7 @@
   padding: 0 5vw;
   margin: 0 auto;
   place-items: center;
+  overflow: hidden;
 }
 
 @media screen and (max-width: 892px) {

@@ -37,7 +37,7 @@ const Carousel = ({ itemList, ...props }) => {
       } else {
         setCurrentPos(currentPos - 1)
       }
-    }, 500)
+    }, 650)
   }
 
   const carouselNext = () => {
@@ -56,7 +56,7 @@ const Carousel = ({ itemList, ...props }) => {
       } else {
         setCurrentPos(currentPos + 1)
       }
-    }, 500)
+    }, 650)
   }
 
   const restoreItems = () => {
