@@ -47,66 +47,74 @@ const CAROUSEL_ITEMS = [
 ]
 
 const Carousel = () => {
-  const [slider, setSlider] = useState()
-  const [direction, setDirection] = useState()
+  const [itemPos, setItemPos] = useState(0)
+  const [prevItem, setPrevItem] = useState()
+  const [currentItem, setCurrentItem] = useState(CAROUSEL_ITEMS[itemPos])
+  const [nextItem, setNextItem] = useState()
 
   useEffect(() => {
-    setSlider(document.getElementById('slider'))
-  })
+    if (itemPos === 0) {
+      setPrevItem(CAROUSEL_ITEMS[CAROUSEL_ITEMS.length - 1])
+      setNextItem(CAROUSEL_ITEMS[itemPos + 1])
+    } else if (itemPos === CAROUSEL_ITEMS.length - 1) {
+      setPrevItem(CAROUSEL_ITEMS[itemPos - 1])
+      setNextItem(CAROUSEL_ITEMS[0])
+    } else {
+      setPrevItem(CAROUSEL_ITEMS[itemPos - 1])
+      setNextItem(CAROUSEL_ITEMS[itemPos + 1])
+    }
+    setCurrentItem(CAROUSEL_ITEMS[itemPos])
+  }, [itemPos])
 
   const carouselPrev = (e) => {
-    setDirection(-1)
-
-    slider.style.transform = 'translate(0)'
+    if (itemPos === 0) {
+      setItemPos(CAROUSEL_ITEMS.length - 1)
+    } else {
+      setItemPos(itemPos - 1)
+    }
   }
 
   const carouselNext = (e) => {
-    setDirection(1)
-
-    slider.style.transform = 'translate(-40%)'
-  }
-
-  const handleCarouselTransition = (e) => {
-    if (direction === 1) {
-      slider.appendChild(slider.firstElementChild)
-    } else if (direction === -1) {
-      slider.prepend(slider.lastElementChild)
+    if (itemPos === CAROUSEL_ITEMS.length - 1) {
+      setItemPos(0)
+    } else {
+      setItemPos(itemPos + 1)
     }
-
-    slider.style.transition = 'none'
-    slider.style.transform = 'translate(-20%)'
-    setTimeout(() => {
-      slider.style.transition = 'all 0.35s'
-    })
   }
 
-  const handleSwipe = (e) => {
-    e.preventDefault()
+  // const handleSwipe = (e) => {
+  //   e.preventDefault()
 
-    const mouseDownX = e.clientX
+  //   const mouseDownX = e.clientX
 
-    const pointerMove = (e) => {
-      if (e.clientX - mouseDownX > 0) {
-        carouselPrev()
-      } else if (e.clientX - mouseDownX < 0) {
-        carouselNext()
-      }
+  //   const pointerMove = (e) => {
+  //     if (e.clientX - mouseDownX > 0) {
+  //       carouselPrev()
+  //     } else if (e.clientX - mouseDownX < 0) {
+  //       carouselNext()
+  //     }
 
-      slider.removeEventListener('pointermove', pointerMove)
-    }
+  //     slider.removeEventListener('pointermove', pointerMove)
+  //   }
 
-    slider.addEventListener('pointermove', pointerMove)
-  }
+  //   slider.addEventListener('pointermove', pointerMove)
+  // }
 
   return (
     <div id="container">
       <div id="carousel">
-        <div id="slider" onTransitionEnd={handleCarouselTransition} onPointerDown={handleSwipe}>
-          {CAROUSEL_ITEMS.map((item, index) => (
-            <div key={index} className="carousel-item" id={item.name}>
-              {item.icon}
-            </div>
-          ))}
+        <div
+          style={{
+            display: 'flex',
+            flexDirection: 'row',
+            width: '100%',
+            justifyContent: 'space-between'
+          }}>
+          <div className="item" >
+            {prevItem?.icon}
+          </div>
+          <div className="item" >{currentItem.icon}</div>
+          <div className="item">{nextItem?.icon}</div>
         </div>
       </div>
       <div style={{ display: 'flex', gap: '20px', justifyContent: 'space-around' }}>
