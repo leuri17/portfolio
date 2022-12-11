@@ -1,128 +1,126 @@
 import '../styles/Carousel.css'
-import { FaCss3, FaDocker, FaGit, FaHtml5, FaJava, FaJs, FaNodeJs } from 'react-icons/fa'
-import { SiMongodb, SiPostgresql, SiSpring } from 'react-icons/si'
-import { useState, useEffect } from 'react'
+import { useState, createRef, useEffect } from 'react'
+import PropTypes from 'prop-types'
+import CarouselItem from './CarouselItem'
 
-const CAROUSEL_ITEMS = [
-  {
-    name: 'HTML',
-    icon: <FaHtml5 />
-  },
-  {
-    name: 'CSS',
-    icon: <FaCss3 />
-  },
-  {
-    name: 'JavaScript',
-    icon: <FaJs />
-  },
-  {
-    name: 'Java',
-    icon: <FaJava />
-  },
-  {
-    name: 'Spring Boot',
-    icon: <SiSpring />
-  },
-  {
-    name: 'Git',
-    icon: <FaGit />
-  },
-  {
-    name: 'PostgreSQL',
-    icon: <SiPostgresql />
-  },
-  {
-    name: 'MongoDB',
-    icon: <SiMongodb />
-  },
-  {
-    name: 'NodeJS',
-    icon: <FaNodeJs />
-  },
-  {
-    name: 'Docker',
-    icon: <FaDocker />
-  }
-]
+const Carousel = ({ itemList, ...props }) => {
+  const [currentPos, setCurrentPos] = useState(0)
 
-const Carousel = () => {
-  const [itemPos, setItemPos] = useState(0)
-  const [prevItem, setPrevItem] = useState()
-  const [currentItem, setCurrentItem] = useState(CAROUSEL_ITEMS[itemPos])
-  const [nextItem, setNextItem] = useState()
+  const prevItemHolder = createRef()
+  const prevItem = createRef()
+  const currentItem = createRef()
+  const nextItem = createRef()
+  const nextItemHolder = createRef()
+
+  const prevBtn = createRef()
+  const nextBtn = createRef()
+
+  const slider = createRef()
 
   useEffect(() => {
-    if (itemPos === 0) {
-      setPrevItem(CAROUSEL_ITEMS[CAROUSEL_ITEMS.length - 1])
-      setNextItem(CAROUSEL_ITEMS[itemPos + 1])
-    } else if (itemPos === CAROUSEL_ITEMS.length - 1) {
-      setPrevItem(CAROUSEL_ITEMS[itemPos - 1])
-      setNextItem(CAROUSEL_ITEMS[0])
-    } else {
-      setPrevItem(CAROUSEL_ITEMS[itemPos - 1])
-      setNextItem(CAROUSEL_ITEMS[itemPos + 1])
-    }
-    setCurrentItem(CAROUSEL_ITEMS[itemPos])
-  }, [itemPos])
+    restoreItems()
+  }, [currentPos])
 
-  const carouselPrev = (e) => {
-    if (itemPos === 0) {
-      setItemPos(CAROUSEL_ITEMS.length - 1)
-    } else {
-      setItemPos(itemPos - 1)
-    }
+  const carouselPrev = () => {
+    prevBtn.current.disabled = true
+    nextBtn.current.disabled = true
+    slider.current.style.display = 'none'
+
+    prevItemHolder.current.className = 'item prev-holder-right'
+    prevItem.current.className = 'item prev-right'
+    currentItem.current.className = 'item current-right'
+    nextItem.current.className = 'item next-right'
+
+    setTimeout(() => {
+      if (currentPos === 0) {
+        setCurrentPos(itemList.length - 1)
+      } else {
+        setCurrentPos(currentPos - 1)
+      }
+    }, 500)
   }
 
-  const carouselNext = (e) => {
-    if (itemPos === CAROUSEL_ITEMS.length - 1) {
-      setItemPos(0)
-    } else {
-      setItemPos(itemPos + 1)
-    }
+  const carouselNext = () => {
+    prevBtn.current.disabled = true
+    nextBtn.current.disabled = true
+    slider.current.style.display = 'none'
+
+    prevItem.current.className = 'item prev-left'
+    currentItem.current.className = 'item current-left'
+    nextItem.current.className = 'item next-left'
+    nextItemHolder.current.className = 'item next-holder-left'
+
+    setTimeout(() => {
+      if (currentPos === itemList.length - 1) {
+        setCurrentPos(0)
+      } else {
+        setCurrentPos(currentPos + 1)
+      }
+    }, 500)
   }
 
-  // const handleSwipe = (e) => {
-  //   e.preventDefault()
+  const restoreItems = () => {
+    prevItemHolder.current.className = 'item'
+    prevItem.current.className = 'item'
+    currentItem.current.className = 'item'
+    nextItem.current.className = 'item'
+    nextItemHolder.current.className = 'item'
 
-  //   const mouseDownX = e.clientX
+    prevBtn.current.disabled = false
+    nextBtn.current.disabled = false
+    slider.current.style.display = 'block'
+  }
 
-  //   const pointerMove = (e) => {
-  //     if (e.clientX - mouseDownX > 0) {
-  //       carouselPrev()
-  //     } else if (e.clientX - mouseDownX < 0) {
-  //       carouselNext()
-  //     }
+  const handleSwipe = (e) => {
+    const mouseDownX = e.clientX
 
-  //     slider.removeEventListener('pointermove', pointerMove)
-  //   }
+    const pointerMove = (ev) => {
+      if (ev.clientX - mouseDownX > 0) {
+        carouselPrev()
+      } else if (ev.clientX - mouseDownX < 0) {
+        carouselNext()
+      }
 
-  //   slider.addEventListener('pointermove', pointerMove)
-  // }
+      slider.current.removeEventListener('pointermove', pointerMove)
+    }
+
+    slider.current.addEventListener('pointermove', pointerMove)
+  }
 
   return (
-    <div id="container">
+    <div id="container" {...props}>
+      <div id="slider" onPointerDown={handleSwipe} ref={slider}></div>
       <div id="carousel">
-        <div
-          style={{
-            display: 'flex',
-            flexDirection: 'row',
-            width: '100%',
-            justifyContent: 'space-between'
-          }}>
-          <div className="item" >
-            {prevItem?.icon}
-          </div>
-          <div className="item" >{currentItem.icon}</div>
-          <div className="item">{nextItem?.icon}</div>
-        </div>
+        <CarouselItem
+          itemList={itemList}
+          pos={currentPos}
+          type="prev-holder"
+          ref={prevItemHolder}
+        />
+        <CarouselItem itemList={itemList} pos={currentPos} type="prev" ref={prevItem} />
+        <CarouselItem itemList={itemList} pos={currentPos} type="current" ref={currentItem} />
+        <CarouselItem itemList={itemList} pos={currentPos} type="next" ref={nextItem} />
+        <CarouselItem
+          itemList={itemList}
+          pos={currentPos}
+          type="next-holder"
+          ref={nextItemHolder}
+        />
       </div>
       <div style={{ display: 'flex', gap: '20px', justifyContent: 'space-around' }}>
-        <button onClick={carouselPrev}>&lt;</button>
-        <button onClick={carouselNext}>&gt;</button>
+        <button onClick={carouselPrev} ref={prevBtn}>
+          &lt;
+        </button>
+        <button onClick={carouselNext} ref={nextBtn}>
+          &gt;
+        </button>
       </div>
     </div>
   )
+}
+
+Carousel.propTypes = {
+  itemList: PropTypes.arrayOf(PropTypes.object).isRequired
 }
 
 export default Carousel

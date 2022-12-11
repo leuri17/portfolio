@@ -1,7 +1,7 @@
 /* || Fonts */
 @font-face {
   font-family: 'VT323';
-  src: local('VT323'), url(../assets/fonts/VT323/VT323-Regular.ttf) format('truetype');
+  src: local('VT323 Regular'), url(../assets/fonts/VT323/VT323-Regular.ttf) format('truetype');
 }
 
 /* || Color Vars */
@@ -113,6 +113,9 @@ button:active {
   border-color: #333;
 }
 
+svg {
+  fill: var(--text-primary);
+}
 
 /* Animations */
 

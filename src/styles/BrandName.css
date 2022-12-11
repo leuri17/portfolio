@@ -11,6 +11,10 @@
   font-family: VT323;
 }
 
+#brand-name svg {
+  fill: var(--text-secondary);
+}
+
 @media screen and (max-width: 892px) {
   #brand-name svg {
     display: none;
