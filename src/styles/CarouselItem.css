@@ -6,7 +6,6 @@
   flex-basis: calc(100% / 3);
   width: calc(100% / 3);
   flex-shrink: 0;
-  transition: none;
   --animation-time: .55s;
 
   transform: translateX(-100%);

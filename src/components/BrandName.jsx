@@ -1,11 +1,11 @@
 import { Link } from 'react-router-dom'
-import { FaDev } from 'react-icons/fa'
 import '../styles/BrandName.css'
+import Logo from './Logo'
 
 const BrandName = () => {
   return (
     <Link to="/" id="brand-name">
-      <FaDev size={36} color="var(--text-secondary)" />
+      <Logo size={36}/>
       <h1>Leuri Alonso</h1>
     </Link>
   )

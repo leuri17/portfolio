@@ -55,6 +55,12 @@
   }
 }
 
+@media screen and (max-width: 892px) {
+  #header nav {
+    grid-template-columns: auto 3fr 1fr
+  }
+}
+
 @media screen and (max-width: 712px) {
   #header {
     height: fit-content;

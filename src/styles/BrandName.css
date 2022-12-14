@@ -16,12 +16,15 @@
 }
 
 @media screen and (max-width: 892px) {
-  #brand-name svg {
+  #brand-name h1 {
     display: none;
+  }
+  #brand-name { 
+    width: fit-content;
   }
 }
 
-@media screen and (max-width: 712px) {
+/* @media screen and (max-width: 712px) {
   #brand-name svg {
     display: block;
   }
@@ -41,4 +44,4 @@
   #brand-name h1 {
     display: none;
   }
-}
+} */
