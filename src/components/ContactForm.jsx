@@ -12,7 +12,7 @@ const ContactForm = () => {
       <h1>Contact</h1>
       <FloatingLabelInput id="nameInput" name="name" label="Name" />
       <FloatingLabelInput id="emailInput" name="email" type="email" label="Email" />
-      <FloatingLabelInput id="subjectInput" name="subject" type="text" label="Name" />
+      <FloatingLabelInput id="subjectInput" name="subject" type="text" label="Subject" />
       <FloatingLabelInput id="messageInput" name="message" type="area" label="Message" />
       <div className="form-group buttons">
         <button type="reset">Clear</button>
