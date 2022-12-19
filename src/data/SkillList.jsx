@@ -1,4 +1,4 @@
-import { FaCss3, FaDocker, FaGit, FaHtml5, FaJava, FaJs, FaNodeJs } from 'react-icons/fa'
+import { FaCss3, FaDocker, FaGitAlt, FaHtml5, FaJava, FaJs, FaNodeJs } from 'react-icons/fa'
 import { SiMongodb, SiPostgresql, SiSpring } from 'react-icons/si'
 
 export const SKILL_LIST = [
@@ -24,7 +24,7 @@ export const SKILL_LIST = [
   },
   {
     name: 'Git',
-    icon: <FaGit />
+    icon: <FaGitAlt />
   },
   {
     name: 'PostgreSQL',

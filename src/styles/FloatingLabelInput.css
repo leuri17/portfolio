@@ -1,0 +1,21 @@
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group label {
+  position: fixed;
+  pointer-events: none;
+  transform: translate(20%, 100%) scale(1);
+  transition: 200ms cubic-bezier(0, 0, 0, 1) 0ms;
+  color: gray;
+  font-size: 16px;
+  line-height: 1;
+}
+
+.form-group:focus-within label, .form-group label.filled {
+  transform: translate(15%, -50%) scale(0.9);
+  color: var(--text-secondary);
+  background: var(--background);
+  padding: 0 5px;
+}

@@ -2,9 +2,8 @@
   display: flex;
   width: 100vw;
   height: 100%;
-  padding: 0 5vw;
-  margin: 0 auto;
-  place-items: center;
+  align-items: center;
+  justify-content: center;
   overflow: hidden;
 }
 

@@ -90,6 +90,7 @@ const Carousel = ({ itemList, ...props }) => {
   return (
     <div id="container" {...props}>
       <div id="slider" onPointerDown={handleSwipe} ref={slider}></div>
+      <h1>{itemList[currentPos].name}</h1>
       <div id="carousel">
         <CarouselItem
           itemList={itemList}

@@ -90,7 +90,9 @@ a:hover {
   color: var(--link-color-hover);
 }
 
-button {
+button,
+input[type='submit'],
+input[type='reset'] {
   display: flex;
 
   color: var(--button-color);
@@ -104,13 +106,28 @@ button {
   cursor: pointer;
 }
 
-button:hover {
+button:hover,
+input[type='submit']:hover,
+input[type='reset']:hover {
   border-color: var(--button-color);
 }
 
-button:active {
+button:active,
+input[type='submit']:active,
+input[type='reset']:active {
   box-shadow: 0 0 5px #333 inset;
   border-color: #333;
+}
+
+input,
+textarea {
+  border: 1px solid var(--text-secondary);
+  color: var(--text-primary);
+  background-color: var(--background);
+  height: 2rem;
+  font-size: 1rem;
+  padding: 10px;
+  border-radius: 5px;
 }
 
 svg {
@@ -131,9 +148,8 @@ svg {
   }
 }
 
-
 @keyframes slide-in {
-  0%{
+  0% {
     opacity: 0;
     transform: translateY(100%);
   }
@@ -142,11 +158,10 @@ svg {
     opacity: 0;
   }
 
-  100%{
+  100% {
     opacity: 1;
     transform: translateY(0);
   }
-  
 }
 
 /* @keyframes rotate-left {

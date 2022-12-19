@@ -11,38 +11,6 @@ const CarouselItem = forwardRef(({ type, itemList, pos, ...props }, ref) => {
     } else {
       setItemPos(calculateItemPos({ type }))
     }
-
-    // if (type === 'prev-holder') {
-    //   if (pos === 0) {
-    //     setItemPos(itemList.length - 2)
-    //   } else if (pos === 1) {
-    //     setItemPos(itemList.length - 1)
-    //   } else {
-    //     setItemPos(pos - 2)
-    //   }
-    // } else if (type === 'prev') {
-    //   if (pos === 0) {
-    //     setItemPos(itemList.length - 1)
-    //   } else {
-    //     setItemPos(pos - 1)
-    //   }
-    // } else if (type === 'current') {
-    //   setItemPos(pos)
-    // } else if (type === 'next') {
-    //   if (pos === itemList.length - 1) {
-    //     setItemPos(0)
-    //   } else {
-    //     setItemPos(pos + 1)
-    //   }
-    // } else if (type === 'next-holder') {
-    //   if (pos === itemList.length - 2) {
-    //     setItemPos(0)
-    //   } else if (pos === itemList.length - 1) {
-    //     setItemPos(1)
-    //   } else {
-    //     setItemPos(pos + 2)
-    //   }
-    // }
   }, [pos])
 
   const calculateItemPos = ({ type }) => {
