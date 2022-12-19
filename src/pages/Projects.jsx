@@ -1,6 +1,10 @@
+import '../styles/Projects.css'
+
 const Projects = () => {
   return (
-    <div>Projects</div>
+      <div className="box">
+        <h2 style={{ margin: '0' }}>Coming soon...</h2>
+      </div>
   )
 }
 
