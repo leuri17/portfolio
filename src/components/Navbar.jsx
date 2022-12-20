@@ -18,7 +18,7 @@ const Navbar = () => {
     <header id="header">
       <nav>
         <BrandName />
-        <NavMenu />
+        <NavMenu onClick={toggleMenu}/>
         <div id="header-buttons">
           <SwitchThemeButton />
           {isMenuExpanded
