@@ -57,7 +57,8 @@
 
 @media screen and (max-width: 892px) {
   #header nav {
-    grid-template-columns: auto 3fr 1fr
+    grid-template-columns: auto 3fr 1fr;
+    gap: 2vw;
   }
 }
 
@@ -69,6 +70,7 @@
   #header nav {
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: 50px 2fr;
+    gap: 0;
   }
 
   #header-buttons .hamburger {
