@@ -6,7 +6,7 @@ import NavMenu from './NavMenu'
 import SwitchThemeButton from './SwitchThemeButton'
 
 const Navbar = () => {
-  const [isMenuExpanded, setIsMenuExpanded] = useState(true)
+  const [isMenuExpanded, setIsMenuExpanded] = useState(false)
 
   const toggleMenu = () => {
     setIsMenuExpanded(!isMenuExpanded)
@@ -18,10 +18,10 @@ const Navbar = () => {
     <header id="header">
       <nav>
         <BrandName />
-        <NavMenu />
+        <NavMenu onClick={toggleMenu}/>
         <div id="header-buttons">
           <SwitchThemeButton />
-          {isMenuExpanded
+          {!isMenuExpanded
             ? (
             <FaBars className="hamburger" onClick={toggleMenu} />
               )
