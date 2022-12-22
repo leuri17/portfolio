@@ -12,7 +12,7 @@
 }
 
 #brand-name svg {
-  fill: var(--text-secondary);
+  fill: var(--background-secondary);
 }
 
 @media screen and (max-width: 892px) {

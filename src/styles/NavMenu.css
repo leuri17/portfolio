@@ -30,15 +30,11 @@
 }
 
 #menu li a:hover::before {
-  box-shadow: 0 30px 0 0 var(--text-secondary) inset, 0 -30px 0 0 var(--text-secondary) inset;
+  box-shadow: 0 30px 0 0 var(--background-secondary) inset, 0 -30px 0 0 var(--background-secondary) inset;
 }
 
-/* #menu li a:hover {
-  box-shadow: 0 0 5px var(--text-secondary) inset;
-} */
-
 #menu li a.active {
-  background-color: var(--text-secondary);
+  background-color: var(--background-secondary);
 }
 
 @media screen and (max-width: 712px) {
