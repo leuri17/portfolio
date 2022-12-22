@@ -1,14 +1,7 @@
-import { useState } from 'react'
 import PropTypes from 'prop-types'
 import '../styles/FloatingLabelInput.css'
 
-const FloatingLabelInput = ({ type = 'text', label, id, name, ...props }) => {
-  const [value, setValue] = useState('')
-
-  function handleChange (e) {
-    setValue(e.target.value)
-  }
-
+const FloatingLabelInput = ({ type = 'text', label, id, name, value, onChange, ...props }) => {
   return (
     <div className="form-group">
       {type === 'area'
@@ -17,13 +10,13 @@ const FloatingLabelInput = ({ type = 'text', label, id, name, ...props }) => {
           name={name}
           id={id}
           value={value}
-          onChange={handleChange}
+          onChange={onChange}
           required
           rows={6}
           cols={64}></textarea>
           )
         : (
-        <input name={name} type={type} value={value} onChange={handleChange} id={id} required />
+        <input name={name} type={type} value={value} onChange={onChange} id={id} required />
           )}
       <label className={value && 'filled'} htmlFor={id}>
         {label}
@@ -36,7 +29,9 @@ FloatingLabelInput.propTypes = {
   type: PropTypes.string,
   label: PropTypes.string.isRequired,
   id: PropTypes.string.isRequired,
-  name: PropTypes.string
+  name: PropTypes.string,
+  value: PropTypes.string.isRequired,
+  onChange: PropTypes.func.isRequired
 }
 
 export default FloatingLabelInput
