@@ -1,0 +1,12 @@
+#backdrop {
+  position: absolute;
+  z-index: 100;
+  width: 100vw;
+  height: 100vh;
+  background-color: #20202080;
+  backdrop-filter: blur(2px);
+  display: grid;
+  place-items: center;
+
+  animation: fade-in .2s linear;
+}

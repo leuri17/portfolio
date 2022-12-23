@@ -15,7 +15,7 @@
 
 .form-group:focus-within label, .form-group label.filled {
   transform: translate(15%, -50%) scale(0.9);
-  color: var(--text-secondary);
+  color: var(--background-secondary);
   background: var(--background);
   padding: 0 5px;
 }
