@@ -21,8 +21,15 @@
   border-radius: 100%;
 }
 
+#presentationCard button {
+  padding: 0;
+}
+
 #presentationCard button a {
   display: flex;
+  height: 100%;
+  width: 100%;
+  padding: 0.6em 1.2em;
   color: var(--text-primary);
 }
 
