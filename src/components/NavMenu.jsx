@@ -2,9 +2,9 @@ import { NavLink } from 'react-router-dom'
 import { FaGithub } from 'react-icons/fa'
 import '../styles/NavMenu.css'
 
-const NavMenu = ({ ...props }) => {
+const NavMenu = () => {
   return (
-    <ul id="menu" {...props}>
+    <ul id="menu">
       <li>
         <NavLink to="projects" className={({ isActive }) => (isActive ? 'active' : '')}>
           Projects

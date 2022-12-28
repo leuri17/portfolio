@@ -1,5 +1,5 @@
 #hamburger {
-  display: flex;
+  display: none;
   flex-direction: column;
   gap: 5px;
   background-color: transparent;
@@ -24,4 +24,10 @@
 
 #hamburger.cross div:last-child {
   transform: rotate(-45deg) translate3d(7px, -7px, 0);
+}
+
+@media screen and (max-width: 768px) {
+  #hamburger {
+    display: flex;
+  }
 }
