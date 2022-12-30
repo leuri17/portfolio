@@ -1,14 +1,13 @@
 import { useState } from 'react'
-import { FaBars, FaTimes } from 'react-icons/fa'
 import '../styles/Navbar.css'
 import BrandName from './BrandName'
+import Hamburger from './Hamburger'
 import NavMenu from './NavMenu'
 import SwitchThemeButton from './SwitchThemeButton'
 
 const Navbar = () => {
   const [isMenuExpanded, setIsMenuExpanded] = useState(false)
-
-  const toggleMenu = () => {
+  const toggleMenu = (e) => {
     setIsMenuExpanded(!isMenuExpanded)
 
     document.getElementById('menu').classList.toggle('show')
@@ -18,16 +17,10 @@ const Navbar = () => {
     <header id="header">
       <nav>
         <BrandName />
-        <NavMenu onClick={toggleMenu}/>
+        <NavMenu />
         <div id="header-buttons">
           <SwitchThemeButton />
-          {!isMenuExpanded
-            ? (
-            <FaBars className="hamburger" onClick={toggleMenu} />
-              )
-            : (
-            <FaTimes className="hamburger" onClick={toggleMenu} />
-              )}
+          <Hamburger onClick={toggleMenu} isMenuExpanded={isMenuExpanded} />
         </div>
       </nav>
     </header>

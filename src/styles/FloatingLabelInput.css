@@ -7,7 +7,6 @@
   position: absolute;
   pointer-events: none;
   transform: translate(20%, 100%) scale(1);
-  transition: 200ms cubic-bezier(0, 0, 0, 1) 0ms;
   color: gray;
   font-size: 16px;
   line-height: 1;

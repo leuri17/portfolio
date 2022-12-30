@@ -21,12 +21,19 @@
   border-radius: 100%;
 }
 
+#presentationCard button {
+  padding: 0;
+}
+
 #presentationCard button a {
   display: flex;
+  height: 100%;
+  width: 100%;
+  padding: 0.6em 1.2em;
   color: var(--text-primary);
 }
 
-@media screen and (max-width: 892px) {
+@media screen and (max-width: 768px) {
   #presentationCard {
     width: 100%;
   }

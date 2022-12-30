@@ -10,6 +10,7 @@
 #social-media a {
   width: 2.6em;
   height: 2.6em;
+  position: relative;
 
   display: flex;
   justify-content: center;
@@ -19,4 +20,26 @@
   border-radius: 100%;
 
   color: var(--text-primary);
+}
+
+#social-media a svg {
+  z-index: 1;
+}
+
+#social-media a::before,
+#social-media a::after {
+  content: '';
+  position: absolute;
+  box-shadow: 0 0 0 0 var(--background-secondary) inset;
+  border-radius: 100%;
+
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transition: all 0.35s linear;
+}
+
+#social-media a:hover::before {
+  box-shadow: 0 0 0 60px var(--background-secondary) inset;
 }

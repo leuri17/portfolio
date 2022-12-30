@@ -32,13 +32,13 @@ const ContactForm = () => {
   return (
     <form id="contact-form" onSubmit={handleSubmit}>
       <h1>Contact</h1>
-      <FloatingLabelInput id="nameInput" name="name" label="Name" {...name} />
-      <FloatingLabelInput id="emailInput" name="email" label="Email" {...email} />
-      <FloatingLabelInput id="subjectInput" name="subject" label="Subject" {...subject} />
-      <FloatingLabelInput id="messageInput" name="message" label="Message" {...message} />
+      <FloatingLabelInput id="nameInput" name="name" label="Name" required {...name} />
+      <FloatingLabelInput id="emailInput" name="email" label="Email" required {...email} />
+      <FloatingLabelInput id="subjectInput" name="subject" label="Subject" required {...subject} />
+      <FloatingLabelInput id="messageInput" name="message" label="Message" required {...message} />
       {modalValues && <Modal {...modalValues} onClose={onModalClose} />}
       <div className="form-group buttons">
-        <button type="submit">Send</button>
+        <button type='submit'>Send</button>
       </div>
     </form>
   )

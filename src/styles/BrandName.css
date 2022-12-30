@@ -1,47 +1,30 @@
 #brand-name {
+  height: 50px;
   display: flex;
   align-items: center;
   gap: 10px;
+  justify-content: space-evenly;
 }
 
 #brand-name h1 {
   margin-bottom: 0;
-  font-size: 36px;
+  font-size: 32px;
   color: var(--text-primary);
-  font-family: VT323;
+  font-family: Exo;
 }
 
 #brand-name svg {
   fill: var(--background-secondary);
 }
 
-@media screen and (max-width: 892px) {
-  #brand-name h1 {
-    display: none;
-  }
-  #brand-name { 
-    width: fit-content;
+@media screen and (max-width: 768px) {
+  #brand-name {
+    justify-content: start;
   }
 }
 
-/* @media screen and (max-width: 712px) {
-  #brand-name svg {
-    display: block;
-  }
-}
-
-@media screen and (max-width: 486px) {
-  #brand-name svg {
+@media screen and (max-width: 576px) {
+  #brand-name h1{
     display: none;
   }
 }
-
-@media screen and (max-width: 384px) {
-  #brand-name svg {
-    display: block;
-  }
-  
-  #brand-name h1 {
-    display: none;
-  }
-} */
