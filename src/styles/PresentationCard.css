@@ -33,7 +33,7 @@
   color: var(--text-primary);
 }
 
-@media screen and (max-width: 892px) {
+@media screen and (max-width: 768px) {
   #presentationCard {
     width: 100%;
   }

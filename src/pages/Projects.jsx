@@ -1,5 +1,4 @@
 import AnimatedBorderContainer from '../components/AnimatedBorderContainer'
-import '../styles/Projects.css'
 
 const Projects = () => {
   return (
