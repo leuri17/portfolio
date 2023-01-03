@@ -77,22 +77,30 @@ body::-webkit-scrollbar-thumb {
 
   color: var(--text-primary);
   text-align: center;
+}
 
+#fixed-background {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -1000;
   background-color: var(--background);
-  background-image: url('../assets/SVGs/Background/first-wave.svg'), url('../assets/SVGs/Background/second-wave.svg');
+  background-image: url('../assets/SVGs/Background/first-wave.svg'),
+    url('../assets/SVGs/Background/second-wave.svg');
   background-repeat: repeat-x;
   background-blend-mode: exclusion;
   background-position-x: 0;
   background-position-y: bottom;
-  background-attachment: fixed;
-  
+
   overflow: hidden;
 
   transition: background-image 0s;
-  animation: animatedBackground 20s linear infinite;
-  -webkit-animation: animatedBackground 20s linear infinite;
-  -moz-animation: animatedBackground 20s linear infinite;
-  -o-animation: animatedBackground 20s linear infinite;
+  animation: background-move 20s linear infinite;
+  -webkit-animation: background-move 20s linear infinite;
+  -moz-animation: background-move 20s linear infinite;
+  -o-animation: background-move 20s linear infinite;
 }
 
 h1,
@@ -203,7 +211,7 @@ svg {
   }
 }
 
-@keyframes animatedBackground {
+@keyframes background-move {
   from {
     background-position-x: 0;
   }
