@@ -9,6 +9,7 @@ const themeReducer = (state, action) => {
   switch (action.type) {
     case 'THEME/switchTheme':
       document.getElementById('root').dataset.theme = state === 'dark' ? 'light' : 'dark'
+      document.getElementById('fixed-background').dataset.theme = state === 'dark' ? 'light' : 'dark'
 
       return document.getElementById('root').dataset.theme
   }
