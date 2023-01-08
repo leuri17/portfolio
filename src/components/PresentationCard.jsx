@@ -18,12 +18,11 @@ const PresentationCard = () => {
       <SocialMedia />
       <button
         style={{
-          display: 'flex',
           margin: '20px auto',
           fontWeight: 'bold'
         }}>
         <NavLink to="contact">
-          Contact&nbsp; <FaExternalLinkAlt />
+          Contact &nbsp; <FaExternalLinkAlt />
         </NavLink>
       </button>
     </div>

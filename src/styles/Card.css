@@ -9,7 +9,7 @@
   background-color: var(--background);
   border-radius: 10px;
 
-  animation: zoom .2s linear;
+  animation: zoom 0.2s linear;
 }
 
 #card-title {
@@ -36,4 +36,22 @@
 
 #card-button button {
   color: var(--text-secondary);
+}
+
+@media screen and (max-width: 1200px) {
+  #card {
+    width: 35vw;
+  }
+}
+
+@media screen and (max-width: 786px) {
+  #card {
+    width: 50vw;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  #card {
+    width: 75vw;
+  }
 }

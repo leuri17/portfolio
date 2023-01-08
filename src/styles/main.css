@@ -50,6 +50,9 @@ body::-webkit-scrollbar-thumb {
   padding: 0;
   box-sizing: border-box;
   transition: all 0.35s;
+  transition-timing-function: linear;
+  transition-delay: 0s;
+  -webkit-transition-delay: 0s;
 }
 
 :root {
@@ -77,22 +80,30 @@ body::-webkit-scrollbar-thumb {
 
   color: var(--text-primary);
   text-align: center;
+}
 
+#fixed-background {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -1000;
   background-color: var(--background);
-  background-image: url('../assets/SVGs/first-wave.svg'), url('../assets/SVGs/second-wave.svg');
+  background-image: url('../assets/SVGs/Background/first-wave.svg'),
+    url('../assets/SVGs/Background/second-wave.svg');
   background-repeat: repeat-x;
   background-blend-mode: exclusion;
   background-position-x: 0;
   background-position-y: bottom;
-  background-attachment: fixed;
-  
+
   overflow: hidden;
 
-  transition: background-image 0s;
-  animation: animatedBackground 20s linear infinite;
-  -webkit-animation: animatedBackground 20s linear infinite;
-  -moz-animation: animatedBackground 20s linear infinite;
-  -o-animation: animatedBackground 20s linear infinite;
+  transition: background-image 0s, background-color 0.35s;
+  animation: background-move 20s linear infinite;
+  -webkit-animation: background-move 20s linear infinite;
+  -moz-animation: background-move 20s linear infinite;
+  -o-animation: background-move 20s linear infinite;
 }
 
 h1,
@@ -165,7 +176,7 @@ svg {
 
 /* Animations */
 
-@keyframes zoom {
+@keyframes zoom-in {
   from {
     transform: scale(0);
     opacity: 0;
@@ -174,6 +185,18 @@ svg {
   to {
     transform: scale(1);
     opacity: 1;
+  }
+}
+
+@keyframes zoom-out {
+  from {
+    transform: scale(1);
+    opacity: 1;
+  }
+
+  to {
+    transform: scale(3);
+    opacity: 0;
   }
 }
 
@@ -203,7 +226,7 @@ svg {
   }
 }
 
-@keyframes animatedBackground {
+@keyframes background-move {
   from {
     background-position-x: 0;
   }
