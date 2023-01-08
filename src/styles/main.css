@@ -49,10 +49,7 @@ body::-webkit-scrollbar-thumb {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  transition: all 0.35s;
-  transition-timing-function: linear;
-  transition-delay: 0s;
-  -webkit-transition-delay: 0s;
+  transition: all 0.35s, color .1s, fill .1s;
 }
 
 :root {
@@ -88,7 +85,7 @@ body::-webkit-scrollbar-thumb {
   position: fixed;
   top: 0;
   left: 0;
-  z-index: -1000;
+  z-index: -100;
   background-color: var(--background);
   background-image: url('../assets/SVGs/Background/first-wave.svg'),
     url('../assets/SVGs/Background/second-wave.svg');
@@ -99,7 +96,7 @@ body::-webkit-scrollbar-thumb {
 
   overflow: hidden;
 
-  transition: background-image 0s, background-color 0.35s;
+  transition: background-image 0s, background-color .35s;
   animation: background-move 20s linear infinite;
   -webkit-animation: background-move 20s linear infinite;
   -moz-animation: background-move 20s linear infinite;
@@ -113,6 +110,10 @@ h4,
 h5,
 h6 {
   margin-bottom: 20px;
+}
+
+p {
+  margin-bottom: 5px;
 }
 
 a {

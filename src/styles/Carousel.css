@@ -16,8 +16,8 @@
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 5vh 5vw;
-  z-index: 20;
   cursor: grab;
+  z-index: 1;
 }
 
 #carousel-items .skill-card {
@@ -25,11 +25,13 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  color: white;
 
   width: 140px;
   height: 140px;
 
-  background-color: #333;
+  backdrop-filter: blur(10px);
+  background-color: #33333399;
   border-radius: 10px;
 }
 
