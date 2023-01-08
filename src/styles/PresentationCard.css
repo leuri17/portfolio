@@ -1,0 +1,44 @@
+#presentationCard {
+  width: 45vw;
+  border-radius: 10px;
+  padding: 40px;
+
+  color: var(--text-primary);
+  background-color: var(--background);
+  animation: zoom 1s;
+}
+
+#presentationCard h1 {
+  margin: 20px auto;
+}
+
+#presentationCard hr {
+  width: 50px;
+  margin: 20px auto;
+}
+
+#presentationCard #myPhoto {
+  border-radius: 100%;
+}
+
+#presentationCard button {
+  padding: 0;
+}
+
+#presentationCard button a {
+  display: flex;
+  height: 100%;
+  width: 100%;
+  padding: 0.6em 1.2em;
+  color: var(--text-primary);
+}
+
+@media screen and (max-width: 768px) {
+  #presentationCard {
+    width: 100%;
+  }
+
+  #bout-me {
+    width: 100% !important;
+  }
+}

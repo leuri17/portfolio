@@ -1,0 +1,24 @@
+#contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  border-radius: 10px;
+  padding: 20px;
+  border: 1px solid var(--text-primary);
+  max-width: 90vw;
+  background-color: var(--background);
+}
+
+#contact-form input {
+  height: 50px;
+}
+
+#contact-form textarea {
+  resize: none;
+  height: max-content;
+}
+
+.form-group.buttons {
+  flex-direction: row;
+  justify-content: space-evenly;
+}

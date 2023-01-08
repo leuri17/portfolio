@@ -1,0 +1,20 @@
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group label {
+  position: absolute;
+  pointer-events: none;
+  transform: translate(20%, 100%) scale(1);
+  color: gray;
+  font-size: 16px;
+  line-height: 1;
+}
+
+.form-group:focus-within label, .form-group label.filled {
+  transform: translate(15%, -50%) scale(0.9);
+  color: var(--background-secondary);
+  background: var(--background);
+  padding: 0 5px;
+}

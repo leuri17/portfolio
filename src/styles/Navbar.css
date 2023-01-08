@@ -1,0 +1,48 @@
+#header {
+  max-width: 100vw;
+  background-color: var(--nav-background);
+
+  position: sticky;
+  top: 0;
+
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+#header nav {
+  width: 90vw;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: auto 3fr auto;
+  gap: 10px;
+}
+
+#header-buttons {
+  display: flex;
+  align-items: center;
+  justify-content: right;
+  gap: 20px;
+}
+
+#header-buttons .hamburger {
+  display: none;
+
+  border: 0;
+  height: 40px;
+  width: 40px;
+  padding: 0.5rem;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 768px) {
+  #header nav {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 50px 2fr;
+    gap: 0;
+  }
+
+  #header-buttons .hamburger {
+    display: block;
+    cursor: pointer;
+  }
+}
