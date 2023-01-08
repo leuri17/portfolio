@@ -25,3 +25,11 @@ dist-ssr
 
 # Env variables
 .env
+
+# Github
+.github
+
+# Firebase
+.firebase
+.firebaserc
+firebase.json

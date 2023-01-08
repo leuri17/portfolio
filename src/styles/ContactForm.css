@@ -6,6 +6,7 @@
   padding: 20px;
   border: 1px solid var(--text-primary);
   max-width: 90vw;
+  backdrop-filter: blur(100px);
 }
 
 #contact-form input {
