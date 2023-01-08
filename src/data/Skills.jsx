@@ -21,7 +21,6 @@ import Selenium from '../assets/SVGs/Skills/selenium.svg'
 import Sourcetree from '../assets/SVGs/Skills/sourcetree.svg'
 import SpringBoot from '../assets/SVGs/Skills/spring-boot.svg'
 import TypeScript from '../assets/SVGs/Skills/typescript.svg'
-import Webpack from '../assets/SVGs/Skills/webpack.svg'
 
 export const SKILL_LIST = [
   {
@@ -63,10 +62,6 @@ export const SKILL_LIST = [
   {
     name: 'Redux',
     icon: <img src={Redux} alt="Redux logo" />
-  },
-  {
-    name: 'Webpack',
-    icon: <img src={Webpack} alt="Webpack logo" />
   },
   {
     name: 'Node.JS',

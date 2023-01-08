@@ -100,7 +100,7 @@ const Carousel = () => {
 
   return (
     <div id="carousel">
-      <div id="carousel-items" onPointerDown={handlePointerDown} ref={carouselItemsRef}>
+      <div id="carousel-items" onPointerDown={handlePointerDown} ref={carouselItemsRef} >
         {SKILL_LIST.slice(
           (currentPage - 1) * ELEMENTS_PER_PAGE,
           currentPage * ELEMENTS_PER_PAGE
