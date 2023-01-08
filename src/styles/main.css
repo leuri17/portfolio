@@ -164,6 +164,10 @@ textarea {
   font-size: 1rem;
   padding: 10px;
   border-radius: 5px;
+  outline: 0px solid transparent;
+  box-shadow: 0 0 0 1000px var(--background) inset;
+  -webkit-box-shadow: 0 0 0 1000px var(--background) inset;
+  -webkit-text-fill-color: var(--text-primary);
 }
 
 input:-webkit-autofill {
