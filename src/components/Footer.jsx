@@ -7,7 +7,7 @@ const Footer = () => {
 
   return (
     <footer id='footer'>
-      <p>&copy; 2022 Leuri Alonso Saturria</p>
+      <p>Copyright &copy; | Coded by <span style={{ fontWeight: 'bold' }}>Leuri Alonso </span></p>
       {location !== '/' && <SocialMedia />}
     </footer>
   )

@@ -9,7 +9,7 @@
   background-color: var(--background);
   border-radius: 10px;
 
-  animation: zoom 0.2s linear;
+  animation: zoom-in .2s linear;
 }
 
 #card-title {

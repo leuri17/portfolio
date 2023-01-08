@@ -6,6 +6,7 @@
 
 - [React](https://es.reactjs.org/) - Is a free and open-source front-end JavaScript library for building user interfaces based on UI components.
 - [Vite](https://vitejs.dev/) - Is a build tool that aims to provide a faster and leaner development experience for modern web projects.
+- [Firebase](https://firebase.google.com/) - Is Google's mobile platform that helps you develop high-quality apps quickly and grow your business.
 
 ## Project structure
 ```bash
@@ -15,15 +16,19 @@ $PROJECT_ROOT
 └── src
     │   # Static files
     ├── assets
-    │   │   # Font files
-    │   ├── fonts
     │   │   # Image files
-    │   └── images
+    │   ├── images
+    │   │   # SVG files
+    │   └── SVGs
     │   # React component files
     ├── components
     │   # React context files
     ├── context
+    │   # Data used by components
+    ├── data
     │   # Custom hooks files
+    ├── hooks
+    │   # web pages
     ├── pages
     │   # Styles files
     └── styles
