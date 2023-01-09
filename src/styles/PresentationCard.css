@@ -5,7 +5,7 @@
 
   color: var(--text-primary);
   background-color: var(--background);
-  animation: zoom 1s;
+  animation: zoom-in 1s;
 }
 
 #presentationCard h1 {
