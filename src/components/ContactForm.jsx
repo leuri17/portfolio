@@ -101,7 +101,7 @@ const ContactForm = () => {
 
   return (
     <>
-      <form id="contact-form" onSubmit={handleSubmit}>
+      <form id="contact-form" onSubmit={handleSubmit} autoComplete='off'>
         <h1 style={{ fontWeight: '200' }}>Contact</h1>
         <FloatingLabelInput id="name-input" name="name" label="Name" required {...name} />
         <FloatingLabelInput id="email-input" name="email" label="Email" required {...email} />

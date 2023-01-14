@@ -34,7 +34,7 @@ const DataProtection = () => {
           filling in this form will be processed by Leuri Alonso Saturria as the party responsible
           for this website.
         </p>
-        <ul style={{ marginLeft: '20px' }}>
+        <ul>
           <li>
             <p>
               <span className="bold">

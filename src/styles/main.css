@@ -49,7 +49,7 @@ body::-webkit-scrollbar-thumb {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  transition: all 0.35s, color .1s, fill .1s;
+  transition: all 0.35s, color 0.1s, fill 0.1s;
 }
 
 :root {
@@ -96,7 +96,7 @@ body::-webkit-scrollbar-thumb {
 
   overflow: hidden;
 
-  transition: background-image 0s, background-color .35s;
+  transition: background-image 0s, background-color 0.35s;
   animation: background-move 20s linear infinite;
   -webkit-animation: background-move 20s linear infinite;
   -moz-animation: background-move 20s linear infinite;
@@ -119,21 +119,24 @@ h1 {
 
 h2 {
   font-weight: 500;
-
 }
 
 h3 {
   font-weight: 400;
-  
 }
 
-h4, h5, h6 {
+h4,
+h5,
+h6 {
   font-weight: 300;
-
 }
 
 p {
   margin-bottom: 5px;
+}
+
+ul {
+  padding-left: 20px;
 }
 
 span.bold {
@@ -183,21 +186,12 @@ input[type='text'],
 input[type='email'],
 textarea {
   border: 1px solid var(--background-secondary);
-  color: var(--text-primary);
+  color: var(--text-primary) !important;
   background-color: var(--background);
   height: 2rem;
   font-size: 1rem;
   padding: 10px;
   border-radius: 5px;
-  outline: 0px solid transparent;
-  box-shadow: 0 0 0 1000px var(--background) inset;
-  -webkit-box-shadow: 0 0 0 1000px var(--background) inset;
-  -webkit-text-fill-color: var(--text-primary);
-}
-
-input:-webkit-autofill {
-  -webkit-text-fill-color: var(--text-primary);
-  -webkit-box-shadow: 0 0 0 1000px var(--background) inset;
 }
 
 svg {
