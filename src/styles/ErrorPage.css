@@ -1,0 +1,40 @@
+#error-page-container {
+  grid-row-start: 2;
+
+  display: grid;
+  place-items: center;
+}
+
+#error-page-card {
+  width: 25vw;
+  height: fit-content;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--background);
+  border-radius: 10px;
+
+  animation: zoom-in 0.2s linear;
+}
+
+#error-page-card h1 {
+  color: var(--text-secondary);
+  background-color: var(--background-secondary);
+  padding: 10px;
+  border-radius: 10px 10px 0 0;
+  margin: 0;
+}
+
+#error-page-card p {
+  padding: 10px;
+  background-color: var(--background);
+  color: var(--text-primary);
+}
+
+#error-page-card div {
+  display: flex;
+  justify-content: end;
+  padding: 10px;
+}
+#error-page-card div button {
+  color: var(--text-secondary);
+}
