@@ -1,3 +1,4 @@
+import '../styles/PrivacyPage.css'
 import { useContext } from 'react'
 import { ThemeContext } from '../context/ThemeContext'
 
@@ -5,18 +6,7 @@ const Privacy = () => {
   const { theme } = useContext(ThemeContext)
 
   return (
-    <div
-      style={{
-        textAlign: 'justify',
-        background: 'var(--background)',
-        backdropFilter: 'blur(5px)',
-        padding: '30px',
-        color: 'var(--text-primary)',
-        borderRadius: '10px',
-        listStyle: 'none',
-        zIndex: '-1'
-      }}
-      data-theme={theme === 'dark' ? 'light' : 'dark'}>
+    <div id="privacy-policy" data-theme={theme === 'dark' ? 'light' : 'dark'}>
       <h1>Privacy Policy</h1>
       <p style={{ color: 'gray', fontSize: '.8rem' }}>Last updated: January 13, 2023</p>
       <p>
@@ -37,61 +27,62 @@ const Privacy = () => {
       </p>
       <h2>Definitions</h2>
       <p>For the purposes of this Privacy Policy:</p>
-      <ul style={{ paddingLeft: '20px' }}>
+      <ul>
         <li>
           <p>
-            <span className='bold'>Account</span> means a unique account created for You to access our Service or
-            parts of our Service.
+            <span className="bold">Account</span> means a unique account created for You to access
+            our Service or parts of our Service.
           </p>
         </li>
         <li>
           <p>
-            <span className='bold'>Company</span> (referred to as either &quot;the Company&quot;, &quot;We&quot;,
-            &quot;Us&quot; or &quot;Our&quot; in this Agreement) refers to Leuri Alonso&apos;s
-            Portfolio.
+            <span className="bold">Company</span> (referred to as either &quot;the Company&quot;,
+            &quot;We&quot;, &quot;Us&quot; or &quot;Our&quot; in this Agreement) refers to Leuri
+            Alonso&apos;s Portfolio.
           </p>
         </li>
         <li>
           <p>
-            <span className='bold'>Cookies</span> are small files that are placed on Your computer, mobile device
-            or any other device by a website, containing the details of Your browsing history on
-            that website among its many uses.
+            <span className="bold">Cookies</span> are small files that are placed on Your computer,
+            mobile device or any other device by a website, containing the details of Your browsing
+            history on that website among its many uses.
           </p>
         </li>
         <li>
           <p>
-            <span className='bold'>Country</span> refers to: Spain
+            <span className="bold">Country</span> refers to: Spain
           </p>
         </li>
         <li>
           <p>
-            <span className='bold'>Device</span> means any device that can access the Service such as a computer,
-            a cellphone or a digital tablet.
+            <span className="bold">Device</span> means any device that can access the Service such
+            as a computer, a cellphone or a digital tablet.
           </p>
         </li>
         <li>
           <p>
-            <span className='bold'>Personal Data</span> is any information that relates to an identified or
-            identifiable individual.
+            <span className="bold">Personal Data</span> is any information that relates to an
+            identified or identifiable individual.
           </p>
         </li>
         <li>
           <p>
-            <span className='bold'>Service</span> refers to the Website.
+            <span className="bold">Service</span> refers to the Website.
           </p>
         </li>
         <li>
           <p>
-            <span className='bold'>Service Provider</span> means any natural or legal person who processes the
-            data on behalf of the Company. It refers to third-party companies or individuals
-            employed by the Company to facilitate the Service, to provide the Service on behalf of
-            the Company, to perform services related to the Service or to assist the Company in
-            analyzing how the Service is used.
+            <span className="bold">Service Provider</span> means any natural or legal person who
+            processes the data on behalf of the Company. It refers to third-party companies or
+            individuals employed by the Company to facilitate the Service, to provide the Service on
+            behalf of the Company, to perform services related to the Service or to assist the
+            Company in analyzing how the Service is used.
           </p>
         </li>
         <li>
           <p>
-            <span className='bold'>Website</span> refers to Leuri Alonso&apos;s Portfolio, accessible from&nbsp;
+            <span className="bold">Website</span> refers to Leuri Alonso&apos;s Portfolio,
+            accessible from&nbsp;
             <a
               href="https://leurialonso.dev"
               rel="external nofollow noopener noreferrer"
@@ -102,9 +93,9 @@ const Privacy = () => {
         </li>
         <li>
           <p>
-            <span className='bold'>You</span> means the individual accessing or using the Service, or the
-            company, or other legal entity on behalf of which such individual is accessing or using
-            the Service, as applicable.
+            <span className="bold">You</span> means the individual accessing or using the Service,
+            or the company, or other legal entity on behalf of which such individual is accessing or
+            using the Service, as applicable.
           </p>
         </li>
       </ul>
@@ -116,7 +107,7 @@ const Privacy = () => {
         information that can be used to contact or identify You. Personally identifiable information
         may include, but is not limited to:
       </p>
-      <ul style={{ paddingLeft: '20px' }}>
+      <ul>
         <li>
           <p>Email address</p>
         </li>
@@ -130,29 +121,34 @@ const Privacy = () => {
 
       <h2>Use of Your Personal Data</h2>
       <p>The Company is going to use Personal Data for the following purposes:</p>
-      <ul style={{ paddingLeft: '20px' }}>
+      <ul>
         <li>
           <p>
-            <span className='bold'>To contact You:</span> To contact You by email, telephone calls, SMS, or other
-            equivalent forms of electronic communication, such as a mobile application&apos;s push
-            notifications regarding updates or informative communications related to the
-            functionalities, products or contracted services, including the security updates, when
-            necessary or reasonable for their implementation.
+            <span className="bold">To contact You:</span> To contact You by email, telephone calls,
+            SMS, or other equivalent forms of electronic communication, such as a mobile
+            application&apos;s push notifications regarding updates or informative communications
+            related to the functionalities, products or contracted services, including the security
+            updates, when necessary or reasonable for their implementation.
           </p>
         </li>
         <li>
           <p>
-            <span className='bold'>To manage Your requests:</span> To attend and manage Your requests to Us.
+            <span className="bold">To manage Your requests:</span> To attend and manage Your
+            requests to Us.
           </p>
         </li>
         <li>
           <p>
-            <span className='bold'>For other purposes</span>: We may use Your information for other purposes,
-            such as evaluating and improving our Service, products, services, and your experience.
+            <span className="bold">For other purposes</span>: We may use Your information for other
+            purposes, such as evaluating and improving our Service, products, services, and your
+            experience.
           </p>
         </li>
       </ul>
-      <p>We do not share Your personal information with any third party. The information that We collect is used only for the purposes described above.</p>
+      <p>
+        We do not share Your personal information with any third party. The information that We
+        collect is used only for the purposes described above.
+      </p>
 
       <h2>Retention of Your Personal Data</h2>
       <p>
@@ -218,7 +214,7 @@ const Privacy = () => {
         The Company may disclose Your Personal Data in the good faith belief that such action is
         necessary to:
       </p>
-      <ul style={{ paddingLeft: '20px' }}>
+      <ul>
         <li>Comply with a legal obligation</li>
         <li>Protect and defend the rights or property of the Company</li>
         <li>Prevent or investigate possible wrongdoing in connection with the Service</li>
@@ -273,7 +269,7 @@ const Privacy = () => {
       </p>
       <h1>Contact Us</h1>
       <p>If you have any questions about this Privacy Policy, You can contact us:</p>
-      <ul style={{ paddingLeft: '20px' }}>
+      <ul>
         <li>
           <p>By email: leuri77@gmail.com</p>
         </li>

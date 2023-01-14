@@ -1,0 +1,7 @@
+#privacy-policy {
+  background-color: var(--background);
+  color: var(--text-primary);
+  padding: 30px;
+  text-align: justify;
+  border-radius: 10px;
+}
