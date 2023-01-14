@@ -8,6 +8,7 @@ import Home from './pages/Home'
 import Projects from './pages/Projects'
 import Contact from './pages/Contact'
 import Skills from './pages/Skills'
+import Privacy from './pages/Privacy'
 
 const router = createBrowserRouter([
   {
@@ -30,6 +31,10 @@ const router = createBrowserRouter([
       {
         path: 'skills',
         element: <Skills />
+      },
+      {
+        path: 'privacy',
+        element: <Privacy />
       }
     ]
   }

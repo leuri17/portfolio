@@ -3,7 +3,11 @@
   flex-direction: column;
 }
 
-.form-group label {
+.form-group input[type='text'], .form-group input[type='email'] {
+  height: 50px;
+}
+
+.form-group label.floating-label {
   position: absolute;
   pointer-events: none;
   transform: translate(20%, 100%) scale(1);
@@ -12,7 +16,7 @@
   line-height: 1;
 }
 
-.form-group:focus-within label, .form-group label.filled {
+.form-group:focus-within label.floating-label, .form-group label.floating-label.filled {
   transform: translate(15%, -50%) scale(0.9);
   color: var(--background-secondary);
   background: var(--background);

@@ -18,7 +18,7 @@ const FloatingLabelInput = ({ type = 'text', label, id, name, value, onChange, r
         : (
         <input name={name} type={type} value={value} onChange={onChange} id={id} required={required} />
           )}
-      <label className={value && 'filled'} htmlFor={id}>
+      <label className={`floating-label ${value && 'filled'}` } htmlFor={id}>
         {label}
       </label>
     </div>

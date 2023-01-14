@@ -5,12 +5,9 @@
   border-radius: 10px;
   padding: 20px;
   border: 1px solid var(--text-primary);
+  width: 45vw;
   max-width: 90vw;
   background-color: var(--background);
-}
-
-#contact-form input {
-  height: 50px;
 }
 
 #contact-form textarea {
@@ -21,4 +18,33 @@
 .form-group.buttons {
   flex-direction: row;
   justify-content: space-evenly;
+}
+
+.form-group label, .form-group input[type='checkbox'] {
+  display: inline-block;
+}
+
+
+@media screen and (max-width: 1200px) {
+  #contact-form {
+    width: 55vw;
+  }
+}
+
+@media screen and (max-width: 992px) {
+  #contact-form {
+    width: 65vw;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  #contact-form {
+    width: 75vw;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  #contact-form {
+    width: 90vw;
+  }
 }
