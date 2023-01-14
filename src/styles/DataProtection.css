@@ -1,0 +1,20 @@
+#data-protection {
+  display: flex;
+  flex-direction: column;
+  max-width: 95%;
+  align-self: center;
+  text-align: start;
+}
+
+#data-protection svg{
+  fill: var(--link-color);
+  transform: translateX(-5px) translateY(3px);
+}
+
+#data-protection-info {
+  overflow: hidden;
+  width: 90%;
+  max-height: 0;
+  margin-top: 10px;
+  transition: max-height .75s;
+}

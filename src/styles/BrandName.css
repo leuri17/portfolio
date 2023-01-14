@@ -7,10 +7,10 @@
 }
 
 #brand-name h1 {
-  margin-bottom: 0;
+  margin: 0 auto;
   font-size: 32px;
+  font-weight: 200;
   color: var(--text-primary);
-  font-family: Exo;
 }
 
 #brand-name svg {

@@ -1,11 +1,12 @@
 import '../styles/ContactForm.css'
 import FloatingLabelInput from './FloatingLabelInput'
 import Modal from './Modal'
-import { useNavigate } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import { useField } from '../hooks/useField'
 import { initializeApp } from 'firebase/app'
 import { getAuth, GoogleAuthProvider, signInWithPopup } from 'firebase/auth'
 import { useModal } from '../hooks/useModal'
+import DataProtection from './DataProtection'
 
 const ContactForm = () => {
   const navigate = useNavigate()
@@ -26,7 +27,7 @@ const ContactForm = () => {
 
   const firebaseConfig = {
     apiKey: 'AIzaSyC5u1Rb0L0szYgNjb1Mys_bAB7VaSABp6o',
-    authDomain: 'portfolio-853f5.firebaseapp.com',
+    authDomain: 'leurialonso.dev',
     projectId: 'portfolio-853f5',
     storageBucket: 'portfolio-853f5.appspot.com',
     messagingSenderId: '170227952982',
@@ -38,17 +39,15 @@ const ContactForm = () => {
     e.preventDefault()
 
     // Initialize Firebase
-    const app = initializeApp(firebaseConfig, 'Portfolio')
+    const app = initializeApp(firebaseConfig, "Leuri Alonso's Portfolio")
 
     // Initialize Firebase Authentication and get a reference to the service
     const auth = getAuth(app)
+    auth.useDeviceLanguage()
 
     // Create a Google Provider instance
     const provider = new GoogleAuthProvider()
     provider.addScope('https://www.googleapis.com/auth/gmail.send')
-    provider.setCustomParameters({
-      login_hint: email
-    })
 
     // Pop-up for login and obtain the token
     signInWithPopup(auth, provider)
@@ -101,17 +100,38 @@ const ContactForm = () => {
   }
 
   return (
-    <form id="contact-form" onSubmit={handleSubmit}>
-      <h1>Contact</h1>
-      <FloatingLabelInput id="nameInput" name="name" label="Name" required {...name} />
-      <FloatingLabelInput id="emailInput" name="email" label="Email" required {...email} />
-      <FloatingLabelInput id="subjectInput" name="subject" label="Subject" required {...subject} />
-      <FloatingLabelInput id="messageInput" name="message" label="Message" required {...message} />
+    <>
+      <form id="contact-form" onSubmit={handleSubmit} autoComplete='off'>
+        <h1 style={{ fontWeight: '200' }}>Contact</h1>
+        <FloatingLabelInput id="name-input" name="name" label="Name" required {...name} />
+        <FloatingLabelInput id="email-input" name="email" label="Email" required {...email} />
+        <FloatingLabelInput
+          id="subject-input"
+          name="subject"
+          label="Subject"
+          required
+          {...subject}
+        />
+        <FloatingLabelInput
+          id="message-input"
+          name="message"
+          label="Message"
+          required
+          {...message}
+        />
+        <div className="form-group" style={{ flexDirection: 'row', justifyContent: '', alignSelf: 'center', width: '95%' }}>
+          <input type="checkbox" name="privacy" id="privacy-checkbox" required />
+          <label htmlFor="privacy-checkbox">
+            &nbsp;I have read and accept the <Link to="/privacy">privacy policy</Link>
+          </label>
+        </div>
+        <DataProtection />
+        <div className="form-group buttons">
+          <button type="submit">Send</button>
+        </div>
+      </form>
       {modalValues && <Modal {...modalValues} onClose={onModalClose} />}
-      <div className="form-group buttons">
-        <button type="submit">Send</button>
-      </div>
-    </form>
+    </>
   )
 }
 

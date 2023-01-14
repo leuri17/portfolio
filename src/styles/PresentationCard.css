@@ -9,11 +9,12 @@
 }
 
 #presentationCard h1 {
-  margin: 20px auto;
+  font-weight: 500;
 }
 
 #presentationCard hr {
-  width: 50px;
+  width: 15%;
+  height: 1px;
   margin: 20px auto;
 }
 

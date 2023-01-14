@@ -1,7 +1,11 @@
-#card {
-  --bg-success: #00c851;
-  --bg-error: #cc0000;
+#error-page-container {
+  grid-row-start: 2;
 
+  display: grid;
+  place-items: center;
+}
+
+#error-page-card {
   width: 25vw;
   height: fit-content;
   display: flex;
@@ -9,46 +13,28 @@
   background-color: var(--background);
   border-radius: 10px;
 
-  animation: zoom-in .2s linear;
+  animation: zoom-in 0.2s linear;
 }
 
-#card-title {
+#error-page-card h1 {
   color: var(--text-secondary);
+  background-color: var(--background-secondary);
   padding: 10px;
   border-radius: 10px 10px 0 0;
   margin: 0;
 }
 
-#card-message {
+#error-page-card p {
   padding: 10px;
   background-color: var(--background);
   color: var(--text-primary);
 }
 
-#card-button {
+#error-page-card div {
   display: flex;
   justify-content: end;
   padding: 10px;
 }
-
-#card-button button {
+#error-page-card div button {
   color: var(--text-secondary);
-}
-
-@media screen and (max-width: 1200px) {
-  #card {
-    width: 35vw;
-  }
-}
-
-@media screen and (max-width: 786px) {
-  #card {
-    width: 50vw;
-  }
-}
-
-@media screen and (max-width: 576px) {
-  #card {
-    width: 75vw;
-  }
 }
