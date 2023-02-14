@@ -14,8 +14,8 @@ const Home = () => {
           MongoDB for the databases.
         </p>
         <p>
-          I don&apos;t have much work experience, but I&apos;m looking forward to gaining some and
-          improving my skills, whether in the IT world or not.{' '}
+          I have some experience as a software developer, working  both in companies and on my own projects.
+          I&apos;m currently working as a Junior tester at <span style={{ fontWeight: 'bolder' }}>Sopra Steria</span>.
         </p>
       </div>
     </>
