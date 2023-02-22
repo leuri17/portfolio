@@ -13,7 +13,7 @@ const PresentationCard = () => {
     <div id="presentationCard" data-theme={theme === 'dark' ? 'light' : 'dark'}>
       <img id="myPhoto" src={myPhoto} alt="Photo of Leuri Alonso Saturria" width="170px" />
       <h1>Leuri Alonso Saturria</h1>
-      <h2>Software Developer & Networked Systems Administrator</h2>
+      <h2>Full-Stack Developer & Networked Systems Administrator</h2>
       <hr />
       <SocialMedia />
       <button
