@@ -1,0 +1,16 @@
+{
+	"HOME": {
+		"about": "Soy técnico en administración de sistemas informáticos en red y también programador.",
+		"experience": "Tengo experiencia como desarrollador de software, trabajando tanto en empresas como en proyectos propios. Actualmente trabajo como Junior tester en Sopra Steria.",
+		"title": "Sobre mí"
+	},
+	"NAV": {
+		"contact": "Contacto",
+		"projects": "Proyectos",
+		"skills": "Habilidades"
+	},
+	"PRESENTATION": {
+		"btn": "Contacto",
+		"title": "Desarrollador Full-Stack y Administrador de Sistemas en Red"
+	}
+}
