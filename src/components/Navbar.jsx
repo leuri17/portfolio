@@ -7,6 +7,7 @@ import SwitchThemeButton from './SwitchThemeButton'
 
 const Navbar = () => {
   const [isMenuExpanded, setIsMenuExpanded] = useState(false)
+
   const toggleMenu = (e) => {
     setIsMenuExpanded(!isMenuExpanded)
 
@@ -17,7 +18,12 @@ const Navbar = () => {
     <header id="header">
       <nav>
         <BrandName />
-        <NavMenu />
+        <NavMenu
+          onClick={() => {
+            console.log('MENU_CLICK')
+            toggleMenu()
+          }}
+        />
         <div id="header-buttons">
           <SwitchThemeButton />
           <Hamburger onClick={toggleMenu} isMenuExpanded={isMenuExpanded} />

@@ -1,4 +1,4 @@
-#presentationCard {
+#presentation-card {
   width: 45vw;
   border-radius: 10px;
   padding: 40px;
@@ -8,25 +8,25 @@
   animation: zoom-in 1s;
 }
 
-#presentationCard h1 {
+#presentation-card h1 {
   font-weight: 500;
 }
 
-#presentationCard hr {
+#presentation-card hr {
   width: 15%;
   height: 1px;
   margin: 20px auto;
 }
 
-#presentationCard #myPhoto {
+#presentation-card #my-photo {
   border-radius: 100%;
 }
 
-#presentationCard button {
+#presentation-card button {
   padding: 0;
 }
 
-#presentationCard button a {
+#presentation-card button a {
   display: flex;
   height: 100%;
   width: 100%;
@@ -35,11 +35,7 @@
 }
 
 @media screen and (max-width: 768px) {
-  #presentationCard {
+  #presentation-card {
     width: 100%;
-  }
-
-  #bout-me {
-    width: 100% !important;
   }
 }
