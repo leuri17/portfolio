@@ -1,6 +1,6 @@
 import '../styles/Carousel.css'
 import { SKILL_LIST } from '../data/Skills'
-import { useEffect, useState, useRef } from 'react'
+import { useEffect, useState, useRef, useLayoutEffect } from 'react'
 
 const Carousel = () => {
   const ELEMENTS_PER_PAGE = 8
@@ -10,9 +10,11 @@ const Carousel = () => {
   const carouselItemsRef = useRef()
   const prevBtnRef = useRef()
   const nextBtnRef = useRef()
+  const carouselPagRef = useRef()
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     setPagesNumber(parseInt((SKILL_LIST.length / ELEMENTS_PER_PAGE).toFixed()))
+    carouselPagRef.current.children.item(0)?.classList.add('active')
   }, [])
 
   useEffect(() => {
@@ -23,6 +25,15 @@ const Carousel = () => {
     if (carouselItemsRef.current.classList.contains('prev')) {
       carouselItemsRef.current.classList.toggle('prev')
     }
+
+    carouselPagRef.current.childNodes.forEach((child, i) => {
+      if (i === currentPage - 1) {
+        child.classList.add('active')
+      } else {
+        child.classList.remove('active')
+      }
+    })
+
     enableButtons()
   }, [currentPage])
 
@@ -100,7 +111,7 @@ const Carousel = () => {
 
   return (
     <div id="carousel">
-      <div id="carousel-items" onPointerDown={handlePointerDown} ref={carouselItemsRef} >
+      <div id="carousel-items" onPointerDown={handlePointerDown} ref={carouselItemsRef}>
         {SKILL_LIST.slice(
           (currentPage - 1) * ELEMENTS_PER_PAGE,
           currentPage * ELEMENTS_PER_PAGE
@@ -112,6 +123,11 @@ const Carousel = () => {
             </div>
           )
         })}
+      </div>
+      <div id="carousel-pagination" ref={carouselPagRef}>
+        {Array.from({ length: pagesNumber }, (v, i) => (
+          <div key={i} className={`pagination ${i === 0 && 'active'}`}></div>
+        ))}
       </div>
       <div id="carousel-buttons">
         <button onClick={prevPage} ref={prevBtnRef}>

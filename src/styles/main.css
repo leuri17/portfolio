@@ -157,6 +157,8 @@ button,
 input[type='submit'],
 input[type='reset'] {
   display: flex;
+  justify-content: center;
+  align-items: center;
 
   color: var(--button-color);
   background-color: var(--button-bg);

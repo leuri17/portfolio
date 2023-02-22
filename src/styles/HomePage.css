@@ -1,0 +1,11 @@
+#about-me {
+  width: 45vw;
+  padding: 50px;
+  animation: 'slide-in 1.25s';
+}
+
+@media screen and (max-width: 768px) {
+  #about-me {
+    width: 100% !important;
+  }
+}
