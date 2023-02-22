@@ -1,11 +1,12 @@
 import PresentationCard from '../components/PresentationCard'
+import '../styles/HomePage.css'
 
 const Home = () => {
   return (
     <>
       <PresentationCard />
 
-      <div id="bout-me" style={{ padding: '50px', width: '45vw', animation: 'slide-in 1.25s' }}>
+      <div id="about-me" style={{ padding: '50px', width: '45vw', animation: 'slide-in 1.25s' }}>
         <h1>About me</h1>
         <p>
           I&apos;m a technitian in administration of networked computer systems and also a

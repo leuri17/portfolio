@@ -50,6 +50,7 @@
     flex-direction: column;
     height: 0;
     overflow: hidden;
+    transition: none;
   }
 
   #menu.show {
