@@ -1,6 +1,6 @@
 # Leuri Alonso — Software Engineer Portfolio
 
-![CI](https://github.com/leuri17/leuri-portfolio/actions/workflows/ci.yml/badge.svg)
+[![CI](https://github.com/leuri17/portfolio/actions/workflows/ci.yml/badge.svg)](https://github.com/leuri17/portfolio/actions/workflows/ci.yml)
 
 Personal portfolio showcasing my work as a **Frontend / Full-Stack Software Engineer**, including selected projects, technical skills and development practices.
 
