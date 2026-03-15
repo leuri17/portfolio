@@ -1,4 +1,4 @@
-import type { Metadata } from 'next';
+import type { Metadata, Viewport } from 'next';
 import './globals.css';
 import { Figtree } from 'next/font/google';
 import { cn } from '@/lib/utils';
@@ -10,6 +10,11 @@ export const metadata: Metadata = {
   description: 'Frontend / Full-Stack Engineer building modern web applications with React and TypeScript.',
 };
 
+export const viewport: Viewport = {
+  width: 'device-width',
+  initialScale: 1,
+};
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -17,7 +22,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={cn('font-sans', figtree.variable)}>
-      <body className="antialiased">{children}</body>
+      <body className="bg-neutral-950 text-white antialiased">{children}</body>
     </html>
   );
 }
