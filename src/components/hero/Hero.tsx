@@ -3,6 +3,7 @@ import { HugeiconsIcon } from '@hugeicons/react';
 
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
+
 import Section from '../ui/Section';
 
 const Hero = () => {
@@ -47,7 +48,7 @@ const Hero = () => {
             <a href="#work" className="text-lg drop-shadow-[0_0_10px] drop-shadow-foreground/60">
               View Work
             </a>
-            <HugeiconsIcon icon={ArrowBigDown} />
+            <HugeiconsIcon icon={ArrowBigDown} strokeWidth={2.5} />
           </Button>
 
           <Button variant={'outline'} size={'lg'} className="py-8 px-6 rounded-full font-bold">
