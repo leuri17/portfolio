@@ -1,5 +1,6 @@
-import type { Metadata, Viewport } from 'next';
 import './globals.css';
+
+import type { Metadata, Viewport } from 'next';
 import { Figtree } from 'next/font/google';
 import { cn } from '@/lib/utils';
 
@@ -22,7 +23,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={cn('dark font-sans', figtree.variable)}>
-      <body className="bg-background text-foreground antialiased">{children}</body>
+      <body className="bg-background text-foreground antialiased">
+        <div className="flex flex-col items-center">
+          <main className="w-full max-w-5xl px-6 lg:px-8">{children}</main>
+        </div>
+      </body>
     </html>
   );
 }
