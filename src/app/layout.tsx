@@ -21,8 +21,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={cn('font-sans', figtree.variable)}>
-      <body className="bg-neutral-950 text-white antialiased">{children}</body>
+    <html lang="en" className={cn('dark font-sans', figtree.variable)}>
+      <body className="bg-background text-foreground antialiased">{children}</body>
     </html>
   );
 }
