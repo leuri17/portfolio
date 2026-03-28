@@ -7,7 +7,11 @@ type SectionProps = HTMLAttributes<HTMLElement> & {
 };
 
 const Section = ({ children, className, separator = false, ...sectionProps }: SectionProps) => {
-  return <section className={cn('py-36 flex flex-col', separator && 'border-t', className)} {...sectionProps}>{children}</section>;
+  return (
+    <section className={cn('py-36 flex flex-col', separator && 'border-t', className)} {...sectionProps}>
+      {children}
+    </section>
+  );
 };
 
 export default Section;
