@@ -4,9 +4,9 @@ import { HugeiconsIcon } from '@hugeicons/react';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 
-import Section from '../ui/Section';
+import Section from '../../ui/Section';
 
-const Hero = () => {
+const HeroSection = () => {
   return (
     <Section>
       <div className="flex items-center gap-4">
@@ -60,4 +60,4 @@ const Hero = () => {
   );
 };
 
-export default Hero;
+export default HeroSection;
