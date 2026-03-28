@@ -11,7 +11,7 @@ type navLink = {
 };
 
 const navLinks: Array<navLink> = [
-  { label: 'Work', href: '#work' },
+  { label: 'Projects', href: '#projects' },
   { label: 'About', href: '#about' },
   { label: 'GitHub', href: 'https://github.com/leuri17', icon: GithubIcon, external: true },
   { label: 'LinkedIn', href: 'https://linkedin.com/in/leuri17', icon: LinkedinIcon, external: true },

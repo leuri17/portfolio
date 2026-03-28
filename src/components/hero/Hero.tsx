@@ -45,8 +45,8 @@ const Hero = () => {
             size={'lg'}
             className="py-8 px-6 rounded-full font-bold bg-linear-to-br from-primary to-destructive hover:scale-105"
           >
-            <a href="#work" className="text-lg drop-shadow-[0_0_10px] drop-shadow-foreground/60">
-              View Work
+            <a href="#projects" className="text-lg drop-shadow-[0_0_10px] drop-shadow-foreground/60">
+              View work
             </a>
             <HugeiconsIcon icon={ArrowBigDown} strokeWidth={2.5} />
           </Button>

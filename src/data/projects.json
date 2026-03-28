@@ -1,0 +1,20 @@
+[
+  {
+    "name": "PitchDesk",
+    "description": "Platform for DJs to promote unreleased tracks by generating personalized messages and streamlining outreach to artists and labels.",
+    "tech": ["Next.js", "TypeScript", "OpenAI"],
+    "img": "pitchdesk.png"
+  },
+  {
+    "name": "CaixaBankNow",
+    "description": "Enterprise banking web application used across multiple countries. Contributed to frontend features, maintenance, and multi-region support.",
+    "tech": ["Java", "JSP", "JavaScript"],
+    "img": "caixabanknow.png"
+  },
+  {
+    "name": "inCV",
+    "description": "Mobile application that helps users create professional CVs through a guided and accessible experience.",
+    "tech": ["React Native", "Android"],
+    "img": "incv.png"
+  }
+]
