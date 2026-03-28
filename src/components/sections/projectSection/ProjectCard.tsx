@@ -39,7 +39,6 @@ const ProjectCard = ({ project }: ProjectCardProps) => {
           <Button variant={'secondary'} size="lg">
             <span className="font-bold">View project</span>
             <HugeiconsIcon icon={ArrowBigRight} strokeWidth={2.5} />
-            {/* <HugeiconsIcon icon={DownloadIcon} strokeWidth={2.5} data-icon="inline-end" /> */}
           </Button>
         </div>
       </div>

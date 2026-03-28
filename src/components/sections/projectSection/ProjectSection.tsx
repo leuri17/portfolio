@@ -16,6 +16,7 @@ const ProjectSection = () => {
         </div>
         <span className="text-slate-500 font-mono text-lg font-bold">{projects.length} Projects</span>
       </div>
+
       <div className="grid grid-cols-3 gap-10">
         {projects.map((proj: Project) => (
           <ProjectCard project={proj} key={proj.name} />
