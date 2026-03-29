@@ -2,6 +2,7 @@ import './globals.css';
 
 import type { Metadata, Viewport } from 'next';
 import { Figtree } from 'next/font/google';
+import { Toaster } from 'sonner';
 import { cn } from '@/lib/utils';
 
 const figtree = Figtree({ subsets: ['latin'], variable: '--font-sans' });
@@ -26,6 +27,7 @@ export default function RootLayout({
       <body className="bg-background text-foreground antialiased">
         <div className="flex flex-col items-center">
           <main className="w-full max-w-5xl px-6 lg:px-8">{children}</main>
+          <Toaster position="top-center" theme="light" richColors={true} />
         </div>
       </body>
     </html>
