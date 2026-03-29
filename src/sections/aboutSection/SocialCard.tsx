@@ -3,17 +3,8 @@
 import { GithubIcon, LinkedinIcon, MailIcon } from '@hugeicons/core-free-icons';
 import { HugeiconsIcon } from '@hugeicons/react';
 
-import { toast } from 'sonner';
-
 import { Card, CardContent } from '@/components/ui/card';
-
-const handleCopyEmail = async () => {
-  toast.promise(navigator.clipboard.writeText('leuri77@gmail.com'), {
-    loading: 'Copying...',
-    success: 'Email coppied',
-    error: 'Failed to copy email',
-  });
-};
+import { copyEmail } from '@/lib/utils';
 
 const SocialCard = () => {
   return (
@@ -47,7 +38,7 @@ const SocialCard = () => {
             rel="noopener noreferrer"
             onClick={(ev) => {
               ev.preventDefault();
-              handleCopyEmail();
+              copyEmail();
             }}
           >
             <HugeiconsIcon icon={MailIcon} size={18} strokeWidth={2} />
