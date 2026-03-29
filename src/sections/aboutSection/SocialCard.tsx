@@ -42,10 +42,13 @@ const SocialCard = () => {
           </a>
           <span className="bg-border size-1 rounded-full"></span>
           <a
-            href="mailto:leuri77@gmail.com"
+            href="#"
             className="hover:text-foreground transition-colors flex items-center gap-0.5"
             rel="noopener noreferrer"
-            onClick={handleCopyEmail}
+            onClick={(ev) => {
+              ev.preventDefault();
+              handleCopyEmail();
+            }}
           >
             <HugeiconsIcon icon={MailIcon} size={18} strokeWidth={2} />
             Copy mail
