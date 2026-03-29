@@ -1,10 +1,11 @@
 import { ArrowBigDown, LocationIcon } from '@hugeicons/core-free-icons';
 import { HugeiconsIcon } from '@hugeicons/react';
 
+import PingDot from '@/components/ui/PingDot';
+import Section from '@/components/ui/Section';
+
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
-
-import Section from '../../ui/Section';
 
 const HeroSection = () => {
   return (
@@ -19,9 +20,7 @@ const HeroSection = () => {
           variant={'destructive'}
           className="border-destructive/50 text-xs font-semibold tracking-wide px-3 py-4.5 uppercase gap-1.5"
         >
-          <div className="size-2.5 bg-destructive rounded-full">
-            <div className="size-full rounded-full bg-destructive animate-ping"></div>
-          </div>
+          <PingDot />
           <span>Open to opportunities</span>
         </Badge>
       </div>

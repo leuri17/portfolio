@@ -1,7 +1,8 @@
 import Header from '@/components/layout/Header';
 
-import HeroSection from '@/components/sections/heroSection/HeroSection';
-import ProjectSection from '@/components/sections/projectSection/ProjectSection';
+import AboutSection from '@/sections/aboutSection/AboutSection';
+import HeroSection from '@/sections/heroSection/HeroSection';
+import ProjectSection from '@/sections/projectSection/ProjectSection';
 
 export default function Home() {
   return (
@@ -9,6 +10,7 @@ export default function Home() {
       <Header />
       <HeroSection />
       <ProjectSection />
+      <AboutSection />
     </>
   );
 }
