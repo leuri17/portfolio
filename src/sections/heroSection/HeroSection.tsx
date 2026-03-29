@@ -1,10 +1,9 @@
 import { ArrowBigDown, LocationIcon } from '@hugeicons/core-free-icons';
 import { HugeiconsIcon } from '@hugeicons/react';
 
+import Section from '@/components/ui/Section';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
-
-import Section from '../../ui/Section';
 
 const HeroSection = () => {
   return (
