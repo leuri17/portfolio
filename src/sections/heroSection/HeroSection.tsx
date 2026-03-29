@@ -40,8 +40,8 @@ const HeroSection = () => {
         </p>
         <div className="flex gap-6 items-center">
           <Button
-            variant={'default'}
-            size={'lg'}
+            variant="default"
+            size="lg"
             className="py-8 px-6 rounded-full font-bold bg-linear-to-br from-primary to-destructive hover:scale-105"
           >
             <a href="#projects" className="text-lg drop-shadow-[0_0_10px] drop-shadow-foreground/60">

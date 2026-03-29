@@ -3,19 +3,11 @@
 import { CommandLineIcon, DownloadIcon } from '@hugeicons/core-free-icons';
 import { HugeiconsIcon } from '@hugeicons/react';
 
+import { downloadCV } from '@/lib/utils';
+
 import Navbar from './Navbar';
 
 import { Button } from '../ui/button';
-
-const handleDownload = () => {
-  const link = document.createElement('a');
-  link.href = '/cv.pdf';
-  link.download = 'Leuri Alonso - Resume.pdf';
-
-  document.body.appendChild(link);
-  link.click();
-  document.body.removeChild(link);
-};
 
 const Header = () => {
   return (
@@ -30,7 +22,7 @@ const Header = () => {
 
       <Navbar />
 
-      <Button variant={'secondary'} size="lg" onClick={handleDownload}>
+      <Button variant={'secondary'} size="lg" onClick={downloadCV}>
         <span className="font-bold">Download CV</span>
         <HugeiconsIcon icon={DownloadIcon} strokeWidth={2.5} data-icon="inline-end" />
       </Button>
