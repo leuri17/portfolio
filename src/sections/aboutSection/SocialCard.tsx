@@ -9,7 +9,7 @@ import { copyEmail } from '@/lib/utils';
 const SocialCard = () => {
   return (
     <Card>
-      <CardContent>
+      <CardContent className="flex flex-col items-center md:items-baseline">
         <p className="uppercase font-bold text-muted-foreground tracking-widest mb-4">Let&apos;s connect</p>
         <div className="flex items-center gap-4 text-muted-foreground">
           <a

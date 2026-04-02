@@ -3,15 +3,13 @@
 import { CommandLineIcon, DownloadIcon } from '@hugeicons/core-free-icons';
 import { HugeiconsIcon } from '@hugeicons/react';
 
-import { downloadCV } from '@/lib/utils';
-
 import Navbar from './Navbar';
 
-import { Button } from '../ui/button';
+import LinkButton from '../ui/LinkButton';
 
 const Header = () => {
   return (
-    <header className="flex items-center justify-between py-8">
+    <header className="flex items-center justify-between pt-8">
       <div className="flex items-center gap-3 group cursor-pointer">
         <div className="bg-primary size-10 rounded-full bg-linear-to-br from-primary to-destructive flex items-center justify-center transition-transform group-hover:scale-105">
           <HugeiconsIcon icon={CommandLineIcon} strokeWidth={2} className="shadow-[0_0_25px] shadow-red-500/45" />
@@ -22,10 +20,13 @@ const Header = () => {
 
       <Navbar />
 
-      <Button variant={'secondary'} size="lg" onClick={downloadCV}>
-        <span className="font-bold">Download CV</span>
-        <HugeiconsIcon icon={DownloadIcon} strokeWidth={2.5} data-icon="inline-end" />
-      </Button>
+      <LinkButton
+        href="/cv.pdf"
+        download="Leuri Alonso - Resume.pdf"
+        variant="button"
+        label="Resume"
+        icon={DownloadIcon}
+      />
     </header>
   );
 };
