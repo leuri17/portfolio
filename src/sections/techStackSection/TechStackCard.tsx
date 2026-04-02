@@ -12,7 +12,7 @@ type TechStackCardProps = {
 
 const TechStackCard = ({ techStack, className }: TechStackCardProps) => {
   return (
-    <Card key={techStack.name} className={`sm:max-w-100 ${className}`}>
+    <Card className={`sm:max-w-100 ${className}`}>
       <CardHeader>
         <CardTitle className="flex flex-col items-center">
           <div className="mb-6 size-16 flex items-center justify-center rounded-full ring text-destructive bg-destructive/20 ring-destructive/40">

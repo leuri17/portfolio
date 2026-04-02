@@ -1,3 +1,5 @@
+'use client';
+
 import { MailIcon } from '@hugeicons/core-free-icons';
 import { HugeiconsIcon } from '@hugeicons/react';
 

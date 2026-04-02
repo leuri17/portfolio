@@ -1,3 +1,5 @@
+'use client';
+
 import { DownloadIcon, GithubIcon, LinkedinIcon } from '@hugeicons/core-free-icons';
 import { HugeiconsIcon } from '@hugeicons/react';
 

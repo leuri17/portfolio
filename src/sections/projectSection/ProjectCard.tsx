@@ -7,6 +7,8 @@ import Image from 'next/image';
 import { useState, type MouseEvent } from 'react';
 
 import { Badge } from '@/components/ui/badge';
+import { buttonVariants } from '@/components/ui/button';
+import { Card, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
 import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle } from '@/components/ui/dialog';
 import { HoverCard, HoverCardContent, HoverCardTrigger } from '@/components/ui/hover-card';
 
@@ -47,10 +49,10 @@ const ProjectCard = ({ project }: ProjectCardProps) => {
 
   return (
     <>
-      <div className="overflow-hidden group rounded-2xl border border-border bg-secondary/40 transition-all hover:border-destructive/50 hover:shadow-[0_0_30px] hover:shadow-red-500/10 hover:scale-105">
+      <Card className="group border border-border transition-all hover:border-destructive/50 hover:shadow-[0_0_30px] hover:shadow-red-500/10 hover:scale-105">
         <Image src={`/projects/${project.img}`} width={1875} height={951} alt={`${project.name} Dashboard`} />
 
-        <div className="p-6 grid grid-rows-[1fr_1fr_4fr_2fr] gap-2">
+        <CardHeader>
           <div className="flex items-center gap-2">
             {project.tech.map((t) => (
               <Badge key={t} variant="destructive" className="tracking-wide">
@@ -58,31 +60,27 @@ const ProjectCard = ({ project }: ProjectCardProps) => {
               </Badge>
             ))}
           </div>
+          <CardTitle>
+            <h3 className="text-xl font-bold transition-colors group-hover:text-destructive">{project.name}</h3>
+          </CardTitle>
+          <CardDescription>
+            <p className="text-sm text-muted-foreground leading-relaxed">{project.description}</p>
+          </CardDescription>
+        </CardHeader>
 
-          <h3 className="text-xl font-bold transition-colors group-hover:text-destructive">{project.name}</h3>
-
-          <p className="text-sm text-muted-foreground leading-relaxed">{project.description}</p>
-
-          <div className="flex items-center justify-end">
-            <Badge
-              variant="secondary"
-              className="text-xs font-semibold tracking-wide px-3 py-4.5 uppercase gap-1.5"
-              render={
-                <a
-                  href={href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex gap-2 items-center bg-secondary px-4 py-2 rounded-full"
-                  onClick={handleViewClick}
-                >
-                  <span className="font-bold">View project</span>
-                  <HugeiconsIcon icon={ArrowBigRight} strokeWidth={2.5} />
-                </a>
-              }
-            />
-          </div>
-        </div>
-      </div>
+        <CardFooter className="mt-auto flex justify-end">
+          <a
+            href={href}
+            target="_blank"
+            rel="noopener noreferrer"
+            className={buttonVariants({ variant: 'secondary', size: 'lg' })}
+            onClick={handleViewClick}
+          >
+            <span className="font-bold">View project</span>
+            <HugeiconsIcon icon={ArrowBigRight} strokeWidth={2.5} />
+          </a>
+        </CardFooter>
+      </Card>
 
       <Dialog open={open} onOpenChange={setOpen}>
         <DialogContent className="w-sm">
