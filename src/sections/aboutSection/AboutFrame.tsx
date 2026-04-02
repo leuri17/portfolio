@@ -2,7 +2,7 @@ import SocialCard from './SocialCard';
 
 const AboutFrame = () => {
   return (
-    <div>
+    <div className="text-center md:text-start">
       <h2 className="text-5xl font-black mb-4">About</h2>
       <div className="text-muted-foreground leading-relaxed text-lg">
         <p className="mb-6">

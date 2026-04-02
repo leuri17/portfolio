@@ -5,9 +5,9 @@ import ExperienceFrame from './ExperienceFrame';
 
 const AboutSection = () => {
   return (
-    <Section id="about" className="grid grid-cols-2 gap-24" separator>
-      <ExperienceFrame />
+    <Section id="about" className="grid gap-24 md:grid-cols-2" separator>
       <AboutFrame />
+      <ExperienceFrame />
     </Section>
   );
 };
