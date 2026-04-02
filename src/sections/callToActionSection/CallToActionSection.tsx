@@ -14,7 +14,7 @@ const CallToActionSection = () => {
     <Section className="items-center gap-10">
       <Badge
         variant={'outline'}
-        className="border-destructive/50 text-xs text-destructive font-semibold tracking-widest px-3 py-4.5 uppercase gap-1.5"
+        className="border-destructive/30 text-xs text-destructive font-semibold tracking-widest px-3 py-4.5 uppercase gap-1.5"
       >
         <span>Let&apos;s collaborate</span>
       </Badge>

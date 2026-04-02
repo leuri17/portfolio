@@ -8,7 +8,7 @@ type SectionProps = HTMLAttributes<HTMLElement> & {
 
 const Section = ({ children, className, separator = false, ...sectionProps }: SectionProps) => {
   return (
-    <section className={cn('py-36 flex flex-col', separator && 'border-t', className)} {...sectionProps}>
+    <section className={cn('py-18 flex flex-col', 'sm:py-24', separator && 'border-t', className)} {...sectionProps}>
       {children}
     </section>
   );

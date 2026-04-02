@@ -1,9 +1,7 @@
 'use client';
 
 import { DownloadIcon, GithubIcon, LinkedinIcon } from '@hugeicons/core-free-icons';
-import { HugeiconsIcon } from '@hugeicons/react';
-
-import { downloadCV } from '@/lib/utils';
+import LinkButton from '../ui/LinkButton';
 
 const Footer = () => {
   return (
@@ -18,38 +16,15 @@ const Footer = () => {
         </div>
       </div>
       <div className="flex gap-6">
-        <a
-          href="https://github.com/leuri17"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="flex gap-2 items-center text-muted-foreground transition-colors hover:text-destructive"
-        >
-          <HugeiconsIcon icon={GithubIcon} size={16} strokeWidth={2} />
-          <span className="font-semibold tracking-wide">GitHub</span>
-        </a>
-
-        <a
-          href="https://linkedin.com/in/leuri17"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="flex gap-2 items-center text-muted-foreground transition-colors hover:text-destructive"
-        >
-          <HugeiconsIcon icon={LinkedinIcon} size={16} strokeWidth={2} />
-          <span className="font-semibold tracking-wide">LinkedIn</span>
-        </a>
-        <a
-          href="#"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="flex gap-2 items-center text-muted-foreground transition-colors hover:text-destructive"
-          onClick={(ev) => {
-            ev.preventDefault();
-            downloadCV();
-          }}
-        >
-          <HugeiconsIcon icon={DownloadIcon} size={16} strokeWidth={2} />
-          <span className="font-semibold tracking-wide">Resume</span>
-        </a>
+        <LinkButton href="https://github.com/leuri17" variant="link" label="GitHub" icon={GithubIcon} />
+        <LinkButton href="https://linkedin.com/in/leuri17" variant="link" label="LinkedIn" icon={LinkedinIcon} />
+        <LinkButton
+          href="/cv.pdf"
+          download="Leuri Alonso - Resume.pdf"
+          variant="link"
+          label="Resume"
+          icon={DownloadIcon}
+        />
       </div>
     </footer>
   );

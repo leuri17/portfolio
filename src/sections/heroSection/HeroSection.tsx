@@ -1,16 +1,18 @@
+'use client';
+
 import { ArrowBigDown, LocationIcon } from '@hugeicons/core-free-icons';
 import { HugeiconsIcon } from '@hugeicons/react';
 
+import LinkButton from '@/components/ui/LinkButton';
 import PingDot from '@/components/ui/PingDot';
 import Section from '@/components/ui/Section';
 
 import { Badge } from '@/components/ui/badge';
-import { Button } from '@/components/ui/button';
 
 const HeroSection = () => {
   return (
-    <Section>
-      <div className="flex items-center gap-4">
+    <Section className="pt-12">
+      <div className="flex flex-col items-center gap-4 mb-2 sm:mb-10 sm:flex-row">
         <Badge variant={'secondary'} className="font-semibold tracking-wide px-3 py-4.5 uppercase">
           <HugeiconsIcon icon={LocationIcon} strokeWidth={2} className="text-destructive" />
           <span>Based in rotterdam</span>
@@ -18,41 +20,41 @@ const HeroSection = () => {
 
         <Badge
           variant={'destructive'}
-          className="border-destructive/50 text-xs font-semibold tracking-wide px-3 py-4.5 uppercase gap-1.5"
+          className="border-destructive/30 text-xs tracking-wide px-3 py-4.5 uppercase gap-1.5"
         >
           <PingDot />
           <span>Open to opportunities</span>
         </Badge>
       </div>
 
-      <div className="text-left">
-        <h1 className="text-8xl font-extrabold tracking-tight leading-none mb-8 uppercase">
+      <div className="text-center sm:text-left">
+        <h1 className="text-5xl font-extrabold tracking-tight mb-8 uppercase sm:text-7xl lg:text-8xl">
           Frontend & Full-Stack Engineer{' '}
           <span className="text-transparent bg-clip-text bg-linear-to-r from-primary to-destructive">
             building the future
           </span>{' '}
           of web
         </h1>
-        <p className="text-2xl text-muted-foreground leading-relaxed max-w-2xl mb-12">
+        <p className="text-xl text-muted-foreground leading-relaxed max-w-2xl mb-12 md:text-2xl">
           Building high-performance web applications with a focus on{' '}
           <span className="text-slate-100 font-medium">precision, security, user experience</span>. 3+ years of
           experience, including enterprise banking platforms.
         </p>
-        <div className="flex gap-6 items-center">
-          <Button
-            variant="default"
-            size="lg"
-            className="py-8 px-6 rounded-full font-bold bg-linear-to-br from-primary to-destructive hover:scale-105"
-          >
-            <a href="#projects" className="text-lg drop-shadow-[0_0_10px] drop-shadow-foreground/60">
-              View work
-            </a>
-            <HugeiconsIcon icon={ArrowBigDown} strokeWidth={2.5} />
-          </Button>
+        <div className="flex flex-col gap-4 items-center sm:flex-row sm:gap-6">
+          <LinkButton
+            href="#projects"
+            variant="button"
+            label="View projects"
+            icon={ArrowBigDown}
+            className="py-8 px-6 text-lg rounded-full font-bold bg-linear-to-br from-primary to-destructive hover:scale-105 w-10/12 sm:w-fit"
+          />
 
-          <Button variant={'outline'} size={'lg'} className="py-8 px-6 rounded-full font-bold">
-            <span className="text-lg">Experience</span>
-          </Button>
+          <LinkButton
+            href="#about"
+            variant="outline"
+            label="Experience"
+            className="py-8 px-6 text-lg rounded-full font-bold"
+          />
         </div>
       </div>
     </Section>
