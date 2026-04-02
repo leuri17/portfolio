@@ -26,7 +26,7 @@ export default function RootLayout({
     <html lang="en" className={cn('dark font-sans', figtree.variable)}>
       <body className="bg-background text-foreground antialiased">
         <div className="flex flex-col items-center">
-          <main className="w-full max-w-5xl px-6 lg:px-8">{children}</main>
+          <main className="w-full max-w-5xl px-6">{children}</main>
           <Toaster position="top-center" theme="light" richColors={true} />
         </div>
       </body>

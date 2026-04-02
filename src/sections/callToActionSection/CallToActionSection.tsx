@@ -1,4 +1,4 @@
-import { GithubIcon, LinkedinIcon, MailIcon } from '@hugeicons/core-free-icons';
+import { MailIcon } from '@hugeicons/core-free-icons';
 import { HugeiconsIcon } from '@hugeicons/react';
 
 import Section from '@/components/ui/Section';
@@ -28,39 +28,7 @@ const CallToActionSection = () => {
           modern web applications with React and Java. Based in Rotterdam and open to new opportunities.
         </p>
       </div>
-      <div className="flex gap-10">
-        <a
-          href="https://github.com/leuri17"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="min-w-36 flex gap-2 items-center justify-center px-4 py-2 border rounded-full bg-secondary/40 hover:bg-secondary/80 transition-colors"
-        >
-          <HugeiconsIcon icon={GithubIcon} size={16} strokeWidth={2} data-icon="inline-left" />
-          <span className="font-semibold tracking-wide">GitHub</span>
-        </a>
-        <a
-          href="https://linkedin.com/in/leuri17"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="min-w-36 flex gap-2 items-center justify-center px-4 py-2 border rounded-full bg-secondary/40 hover:bg-secondary/80 transition-colors"
-        >
-          <HugeiconsIcon icon={LinkedinIcon} size={16} strokeWidth={2} data-icon="inline-left" />
-          <span className="font-semibold tracking-wide">LinkedIn</span>
-        </a>
-        {/* <a
-          href="#"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="min-w-36 flex gap-2 items-center justify-center px-4 py-2 border rounded-full bg-secondary/40 hover:bg-secondary/80 transition-colors"
-          onClick={(ev) => {
-            ev.preventDefault();
-            downloadCV();
-          }}
-        >
-          <HugeiconsIcon icon={DownloadIcon} size={16} strokeWidth={2} data-icon="inline-left" />
-          <span className="font-semibold tracking-wide">Resume</span>
-        </a> */}
-      </div>
+
       <div>
         <a
           href="#"
