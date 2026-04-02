@@ -2,20 +2,20 @@ import type { Project } from '@/types/project';
 
 export const projectList: Project[] = [
   {
-    name: 'PitchDesk',
-    description:
-      'Platform for DJs to promote unreleased tracks by generating personalized messages and streamlining outreach to artists and labels.',
-    tech: ['Next.js', 'TypeScript', 'OpenAI'],
-    img: 'pitchdesk.png',
-    clickAction: { type: 'none' },
-  },
-  {
     name: 'CaixaBankNow',
     description:
       'Enterprise banking web application used across multiple countries. Contributed to frontend features, maintenance, and multi-region support.',
     tech: ['Java', 'JSP', 'JavaScript'],
     img: 'caixabanknow.png',
     clickAction: { type: 'web', url: 'https://loc.caixabank.de/GPeticiones' },
+  },
+  {
+    name: 'PitchDesk',
+    description:
+      'Platform for DJs to promote unreleased tracks by generating personalized messages and streamlining outreach to artists and labels.',
+    tech: ['Next.js', 'TypeScript', 'OpenAI'],
+    img: 'pitchdesk.png',
+    clickAction: { type: 'none' },
   },
   {
     name: 'inCV',

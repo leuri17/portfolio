@@ -12,13 +12,15 @@ import { Card, CardDescription, CardFooter, CardHeader, CardTitle } from '@/comp
 import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle } from '@/components/ui/dialog';
 import { HoverCard, HoverCardContent, HoverCardTrigger } from '@/components/ui/hover-card';
 
+import { cn } from '@/lib/utils';
 import { Project } from '@/types/project';
 
 type ProjectCardProps = {
   project: Project;
+  className?: string;
 };
 
-function dialogCopyFor(action: Project['clickAction']) {
+const dialogCopyFor = (action: Project['clickAction']) => {
   switch (action.type) {
     case 'none':
       return {
@@ -33,9 +35,9 @@ function dialogCopyFor(action: Project['clickAction']) {
     default:
       return null;
   }
-}
+};
 
-const ProjectCard = ({ project }: ProjectCardProps) => {
+const ProjectCard = ({ project, className }: ProjectCardProps) => {
   const [open, setOpen] = useState(false);
   const dialogCopy = dialogCopyFor(project.clickAction);
 
@@ -49,7 +51,7 @@ const ProjectCard = ({ project }: ProjectCardProps) => {
 
   return (
     <>
-      <Card className="group border border-border transition-all hover:border-destructive/50 hover:shadow-[0_0_30px] hover:shadow-red-500/10 hover:scale-105">
+      <Card className={cn('h-full group border transition-all hover:border-destructive/50', className)}>
         <Image src={`/projects/${project.img}`} width={1875} height={951} alt={`${project.name} Dashboard`} />
 
         <CardHeader>
