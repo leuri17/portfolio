@@ -4,19 +4,27 @@ import nextTs from 'eslint-config-next/typescript';
 
 import prettier from 'eslint-config-prettier/flat';
 import importPlugin from 'eslint-plugin-import';
-import unusedImports from 'eslint-plugin-unused-imports';
 
 const eslintConfig = defineConfig([
   ...nextVitals,
   ...nextTs,
   {
     plugins: {
-      'unused-imports': unusedImports,
       import: importPlugin,
     },
     rules: {
-      'unused-imports/no-unused-imports': 'error',
-      'unused-imports/no-unused-vars': ['warn', { argsIgnorePattern: '^_' }],
+      '@typescript-eslint/no-unused-vars': [
+        'error',
+        {
+          args: 'all',
+          argsIgnorePattern: '^_',
+          caughtErrors: 'all',
+          caughtErrorsIgnorePattern: '^_',
+          destructuredArrayIgnorePattern: '^_',
+          varsIgnorePattern: '^_',
+          ignoreRestSiblings: true,
+        },
+      ],
       'import/order': [
         'warn',
         {
