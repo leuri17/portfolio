@@ -51,7 +51,7 @@ const LinkButton = ({
       }}
     >
       <span className="tracking-wide">{label}</span>
-      {icon && <HugeiconsIcon icon={icon} strokeWidth={isLink ? 2 : 2.5} className="hidden sm:block" />}
+      {icon && <HugeiconsIcon icon={icon} strokeWidth={isLink ? 2 : 2.5} />}
     </a>
   );
 };

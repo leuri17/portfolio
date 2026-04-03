@@ -15,7 +15,9 @@ const Header = () => {
           <HugeiconsIcon icon={CommandLineIcon} strokeWidth={2} className="shadow-[0_0_25px] shadow-red-500/45" />
         </div>
 
-        <h1 className="text-xl font-bold">Leuri Alonso</h1>
+        <h1 className="text-lg font-bold uppercase leading-5 tracking-wide line-clamp-2">
+          Leuri <span className="md:block">Alonso</span>
+        </h1>
       </div>
 
       <Navbar />
