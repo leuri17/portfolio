@@ -46,15 +46,11 @@ const HeroSection = () => {
             variant="button"
             label="View projects"
             icon={ArrowBigDown}
-            className="py-8 px-6 text-lg rounded-full font-bold bg-linear-to-br from-primary to-destructive hover:scale-105 w-10/12 sm:w-fit"
+            className="font-bold text-md bg-linear-to-br from-primary to-destructive hover:scale-105 sm:w-fit"
+            size="xl"
           />
 
-          <LinkButton
-            href="#about"
-            variant="outline"
-            label="Experience"
-            className="py-8 px-6 text-lg rounded-full font-bold"
-          />
+          <LinkButton href="#about" variant="outline" label="Experience" className="font-bold text-md" size="xl" />
         </div>
       </div>
     </Section>

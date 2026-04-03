@@ -26,6 +26,7 @@ const Header = () => {
         variant="button"
         label="Resume"
         icon={DownloadIcon}
+        size="lg"
       />
     </header>
   );

@@ -11,9 +11,17 @@ type LinkButtonProps = {
   icon?: IconSvgElement;
   href: string;
   download?: string;
+  size?: 'sm' | 'default' | 'xs' | 'lg' | 'xl';
 };
 
-const LinkButton = ({ className = '', variant = 'button', label, icon, ...props }: LinkButtonProps) => {
+const LinkButton = ({
+  className = '',
+  variant = 'button',
+  size = 'default',
+  label,
+  icon,
+  ...props
+}: LinkButtonProps) => {
   const isLink = variant === 'link';
   const isButton = variant === 'button';
 
@@ -31,8 +39,8 @@ const LinkButton = ({ className = '', variant = 'button', label, icon, ...props 
       target="_blank"
       rel="noopener noreferrer"
       className={cn(
-        buttonVariants({ variant: styleVariant, size: 'lg' }),
-        isLink && 'flex-row-reverse text-muted-foreground hover:text-destructive text-base',
+        buttonVariants({ variant: styleVariant, size }),
+        isLink && 'flex-row-reverse text-muted-foreground text-base hover:text-destructive hover:no-underline',
         className
       )}
       onClick={(ev) => {
@@ -43,9 +51,7 @@ const LinkButton = ({ className = '', variant = 'button', label, icon, ...props 
       }}
     >
       <span className="tracking-wide">{label}</span>
-      {icon && (
-        <HugeiconsIcon icon={icon} strokeWidth={isLink ? 2 : 2.5} data-icon={isLink ? 'inline-start' : 'inline-end'} />
-      )}
+      {icon && <HugeiconsIcon icon={icon} strokeWidth={isLink ? 2 : 2.5} className="hidden sm:block" />}
     </a>
   );
 };
