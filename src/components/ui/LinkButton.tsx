@@ -4,16 +4,27 @@ import { cn } from '@/lib/utils';
 
 import { buttonVariants } from './button';
 
-type LinkButtonProps = {
+type BaseLinkButton = {
   className?: string;
   variant: 'link' | 'button' | 'outline';
   label: string;
   icon?: IconSvgElement;
-  href: string;
+  iconSize?: number;
   download?: string;
   size?: 'sm' | 'default' | 'xs' | 'lg' | 'xl';
-  onClick?: () => void;
 };
+
+type UrlLinkButton = BaseLinkButton & {
+  href: string;
+  onClick?: never;
+};
+
+type FunctionLinkButton = BaseLinkButton & {
+  href?: never;
+  onClick: () => void;
+};
+
+type LinkButtonProps = UrlLinkButton | FunctionLinkButton;
 
 const LinkButton = ({
   className = '',
@@ -21,6 +32,7 @@ const LinkButton = ({
   size = 'default',
   label,
   icon,
+  iconSize = 4,
   onClick,
   ...props
 }: LinkButtonProps) => {
@@ -30,9 +42,11 @@ const LinkButton = ({
   const styleVariant = isLink ? 'link' : isButton ? 'secondary' : 'outline';
 
   const handleAnchorClick = () => {
-    document.getElementById(props.href.substring(1))?.scrollIntoView({
-      behavior: 'smooth',
-    });
+    if (props.href) {
+      document.getElementById(props.href.substring(1))?.scrollIntoView({
+        behavior: 'smooth',
+      });
+    }
   };
 
   return (
@@ -41,12 +55,13 @@ const LinkButton = ({
       target="_blank"
       rel="noopener noreferrer"
       className={cn(
+        'cursor-pointer',
         buttonVariants({ variant: styleVariant, size }),
-        isLink && 'flex-row-reverse p-0 text-muted-foreground hover:text-destructive hover:no-underline',
+        isLink && 'flex-row-reverse p-0 text-muted-foreground',
         className
       )}
       onClick={(ev) => {
-        if (props.href.startsWith('#')) {
+        if (props.href?.startsWith('#')) {
           ev.preventDefault();
           handleAnchorClick();
         }
@@ -55,7 +70,7 @@ const LinkButton = ({
       }}
     >
       <span className="tracking-wide">{label}</span>
-      {icon && <HugeiconsIcon icon={icon} strokeWidth={isLink ? 2 : 2.5} />}
+      {icon && <HugeiconsIcon icon={icon} className={`size-${iconSize}`} strokeWidth={isLink ? 2 : 2.5} />}
     </a>
   );
 };

@@ -23,14 +23,7 @@ const SocialCard = () => {
             size="sm"
           />
           <span className="bg-border size-1 rounded-full"></span>
-          <LinkButton
-            href="https://github.com/leuri17"
-            label="Email"
-            variant="link"
-            icon={MailIcon}
-            size="sm"
-            onClick={copyEmail}
-          />
+          <LinkButton label="Email" variant="link" icon={MailIcon} size="sm" onClick={copyEmail} />
         </div>
       </CardContent>
     </Card>
