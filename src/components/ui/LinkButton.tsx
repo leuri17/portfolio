@@ -12,6 +12,7 @@ type LinkButtonProps = {
   href: string;
   download?: string;
   size?: 'sm' | 'default' | 'xs' | 'lg' | 'xl';
+  onClick?: () => void;
 };
 
 const LinkButton = ({
@@ -20,6 +21,7 @@ const LinkButton = ({
   size = 'default',
   label,
   icon,
+  onClick,
   ...props
 }: LinkButtonProps) => {
   const isLink = variant === 'link';
@@ -40,7 +42,7 @@ const LinkButton = ({
       rel="noopener noreferrer"
       className={cn(
         buttonVariants({ variant: styleVariant, size }),
-        isLink && 'flex-row-reverse text-muted-foreground text-base hover:text-destructive hover:no-underline',
+        isLink && 'flex-row-reverse p-0 text-muted-foreground hover:text-destructive hover:no-underline',
         className
       )}
       onClick={(ev) => {
@@ -48,6 +50,8 @@ const LinkButton = ({
           ev.preventDefault();
           handleAnchorClick();
         }
+
+        onClick?.();
       }}
     >
       <span className="tracking-wide">{label}</span>
