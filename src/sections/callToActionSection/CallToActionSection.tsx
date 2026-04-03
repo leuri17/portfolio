@@ -1,8 +1,8 @@
 'use client';
 
 import { MailIcon } from '@hugeicons/core-free-icons';
-import { HugeiconsIcon } from '@hugeicons/react';
 
+import LinkButton from '@/components/ui/LinkButton';
 import Section from '@/components/ui/Section';
 
 import { Badge } from '@/components/ui/badge';
@@ -34,19 +34,15 @@ const CallToActionSection = () => {
       </div>
 
       <div>
-        <a
-          href="#"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="min-w-42 flex gap-2 items-center justify-center px-8 py-6 rounded-full bg-secondary/40 hover:bg-secondary/80 transition-all bg-linear-to-br from-primary to-destructive hover:scale-105"
-          onClick={(ev) => {
-            ev.preventDefault();
-            copyEmail();
-          }}
-        >
-          <HugeiconsIcon icon={MailIcon} size={24} strokeWidth={2} data-icon="inline-left" />
-          <span className="font-semibold tracking-wider text-lg">Get in touch</span>
-        </a>
+        <LinkButton
+          onClick={copyEmail}
+          label="Get in touch"
+          variant="button"
+          className="font-semibold text-lg bg-linear-to-br from-primary to-destructive hover:scale-105"
+          icon={MailIcon}
+          iconSize={6}
+          size="xl"
+        />
       </div>
     </Section>
   );

@@ -19,7 +19,7 @@ const navLinks: Array<navLink> = [
 const Navbar = () => {
   return (
     <nav className="hidden md:block">
-      <ul className="flex items-center gap-10 text-sm font-medium text-muted-foreground">
+      <ul className="flex items-center text-sm font-medium text-muted-foreground lg:gap-6">
         {navLinks.map((link) => (
           <li key={link.href}>
             <LinkButton href={link.href} variant="link" label={link.label} icon={link.icon} />
